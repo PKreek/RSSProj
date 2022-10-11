@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastPlayer", "PodcastPlayer\PodcastPlayer.csproj", "{880D141B-F586-4417-95B8-CC03B007BA7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PodcastPlayer", "PodcastPlayer\PodcastPlayer.csproj", "{880D141B-F586-4417-95B8-CC03B007BA7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccess\DataAccessLayer.csproj", "{2EAFDD5C-9F5E-4243-BDA7-DC3F1A6546D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{F5B591CA-0B9E-4F04-9C02-EFB9A7334A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{B79FA99F-5B6E-4005-B1D7-3189BA6ECB14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{880D141B-F586-4417-95B8-CC03B007BA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{880D141B-F586-4417-95B8-CC03B007BA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{880D141B-F586-4417-95B8-CC03B007BA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAFDD5C-9F5E-4243-BDA7-DC3F1A6546D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAFDD5C-9F5E-4243-BDA7-DC3F1A6546D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAFDD5C-9F5E-4243-BDA7-DC3F1A6546D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAFDD5C-9F5E-4243-BDA7-DC3F1A6546D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5B591CA-0B9E-4F04-9C02-EFB9A7334A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5B591CA-0B9E-4F04-9C02-EFB9A7334A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5B591CA-0B9E-4F04-9C02-EFB9A7334A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5B591CA-0B9E-4F04-9C02-EFB9A7334A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79FA99F-5B6E-4005-B1D7-3189BA6ECB14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79FA99F-5B6E-4005-B1D7-3189BA6ECB14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79FA99F-5B6E-4005-B1D7-3189BA6ECB14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79FA99F-5B6E-4005-B1D7-3189BA6ECB14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
