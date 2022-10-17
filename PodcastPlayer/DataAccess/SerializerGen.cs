@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 
 namespace DataAccessLayer
 {
-    internal class SerializerGen<T>
+    internal class Serializer<T>
     {
         private string fileName;
         public string FileName
@@ -17,9 +17,9 @@ namespace DataAccessLayer
                 fileName = value;
             }
         }
-        public SerializerGen(string fName)
+        public Serializer(string fName)
         {
-            FileName = fName;
+            FileName = fName+".xml";
         }
         public void Serialize(List<T> list)
         {
