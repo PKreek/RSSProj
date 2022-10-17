@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Category
+    internal class VuxenKategori
     {
-        public int CategoryId { get; set; }
-        public string CatName { get; set; }
     }
 }

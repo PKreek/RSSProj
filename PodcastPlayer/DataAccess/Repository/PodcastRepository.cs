@@ -37,7 +37,7 @@ namespace DataAccessLayer.Repository
             Podcast podcast = null;
             foreach (var item in PodcastSerializer.Deserialize())
             {
-                if (item.Episode.Equals(id))
+                if (item.PodID.Equals(id))
                 {
                     podcast = item;
                 }

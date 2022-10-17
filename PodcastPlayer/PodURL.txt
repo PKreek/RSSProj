@@ -1,0 +1,5 @@
+Creepopodden: https://api.sr.se/api/rss/pod/22209
+P3Krim: https://api.sr.se/api/rss/pod/34482
+P3Dokumentär: https://api.sr.se/api/rss/pod/3966
+Ligga med P3: https://api.sr.se/api/rss/pod/13557 OBS 18+
+P3 Historia: https://api.sr.se/api/rss/pod/23791

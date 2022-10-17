@@ -7,7 +7,7 @@ namespace ConsoleTestApp
     {
         static void Main(string[] args)
         {
-            SyndicationFeed feed = FeedReader.ReadFeed("https://www.espn.com/espn/rss/news");
+            SyndicationFeed feed = FeedReader.ReadFeed("https://api.sr.se/api/rss/pod/22209");
             Console.WriteLine(feed.Title.Text);
         }
     }
