@@ -13,6 +13,11 @@ namespace DataAccess
             SyndicationFeed feed = SyndicationFeed.Load(reader);
 
             Podcast podcast = new Podcast(feed.Title.Text);
+            foreach(SyndicationItem item in feed.Items)
+            {
+                Episode episode = new Episode(item.Title.Text);
+                podcast.Episodes.Add(episode);
+            }
 
             return podcast;
         }

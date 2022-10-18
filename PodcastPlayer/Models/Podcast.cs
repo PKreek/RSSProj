@@ -13,6 +13,8 @@ namespace Models
         public double Frequency { get; set; }
         public string Category { get; set; }
 
+        public List<Episode> Episodes { get; set; }
+
         public Podcast()
         {
 
@@ -23,11 +25,13 @@ namespace Models
             PodName = name;
             Frequency = frequency;
             Category = category;
+            Episodes = new List<Episode>();
         }
 
         public Podcast(string name)
         {
             PodName = name;
+            Episodes = new List<Episode>();
         }
     }
 }

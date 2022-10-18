@@ -51,6 +51,7 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lstEpisode = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.lblEpisode = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -256,11 +257,19 @@
             // 
             // lstEpisode
             // 
+            this.lstEpisode.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lstEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstEpisode.Location = new System.Drawing.Point(27, 538);
             this.lstEpisode.Name = "lstEpisode";
             this.lstEpisode.Size = new System.Drawing.Size(985, 314);
             this.lstEpisode.TabIndex = 18;
             this.lstEpisode.UseCompatibleStateImageBehavior = false;
+            this.lstEpisode.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 1000;
             // 
             // lblEpisode
             // 
@@ -331,5 +340,6 @@
         private Label lblTitle;
         private ListView lstEpisode;
         private Label lblEpisode;
+        private ColumnHeader columnHeader1;
     }
 }
