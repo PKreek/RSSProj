@@ -15,13 +15,16 @@ namespace PodcastPlayer
         private void btnNewPod_Click(object sender, EventArgs e)
         {
             Podcast podcast = podcastController.AddPodcast(txtUrl.Text);
-            lstPodcasts.Items.Add(podcast.Episodes.Count.ToString());
-            lstPodcasts.Items.Add(podcast.PodName);
-            foreach (var item in podcast.Episodes) 
-            {
-                lstEpisode.Items.Add(item.EpisodeName);
-            }
-         
+            ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
+            item.SubItems.Add(podcast.PodName);
+            lstPodcasts.Items.Add(item);
+            //foreach (var item in podcast.Episodes) 
+            //{
+            //    lstEpisode.Items.Add(item.EpisodeName);
+            //}
+           
         }
+
+
     }
 }
