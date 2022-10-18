@@ -46,15 +46,21 @@
             this.colName = new System.Windows.Forms.ColumnHeader();
             this.colFrequency = new System.Windows.Forms.ColumnHeader();
             this.colCategory = new System.Windows.Forms.ColumnHeader();
+            this.lstCategory = new System.Windows.Forms.ListView();
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lstEpisode = new System.Windows.Forms.ListView();
+            this.lblEpisode = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCategories
             // 
             this.lblCategories.AutoSize = true;
             this.lblCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCategories.Location = new System.Drawing.Point(1073, 56);
+            this.lblCategories.Location = new System.Drawing.Point(1073, 27);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(78, 15);
+            this.lblCategories.Size = new System.Drawing.Size(143, 29);
             this.lblCategories.TabIndex = 0;
             this.lblCategories.Text = "Kategorier:";
             // 
@@ -64,7 +70,7 @@
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUrl.Location = new System.Drawing.Point(27, 308);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(39, 15);
+            this.lblUrl.Size = new System.Drawing.Size(70, 29);
             this.lblUrl.TabIndex = 1;
             this.lblUrl.Text = "URL:";
             // 
@@ -74,7 +80,7 @@
             this.lblUpdateFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateFreq.Location = new System.Drawing.Point(471, 308);
             this.lblUpdateFreq.Name = "lblUpdateFreq";
-            this.lblUpdateFreq.Size = new System.Drawing.Size(150, 15);
+            this.lblUpdateFreq.Size = new System.Drawing.Size(275, 29);
             this.lblUpdateFreq.TabIndex = 2;
             this.lblUpdateFreq.Text = "Uppdateringsfrekvens:";
             // 
@@ -84,7 +90,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCategory.Location = new System.Drawing.Point(770, 308);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(65, 15);
+            this.lblCategory.Size = new System.Drawing.Size(119, 29);
             this.lblCategory.TabIndex = 3;
             this.lblCategory.Text = "Kategori:";
             // 
@@ -95,7 +101,7 @@
             this.cbxUpdateFreq.FormattingEnabled = true;
             this.cbxUpdateFreq.Location = new System.Drawing.Point(471, 352);
             this.cbxUpdateFreq.Name = "cbxUpdateFreq";
-            this.cbxUpdateFreq.Size = new System.Drawing.Size(275, 28);
+            this.cbxUpdateFreq.Size = new System.Drawing.Size(275, 45);
             this.cbxUpdateFreq.TabIndex = 4;
             this.cbxUpdateFreq.Text = "Var 10:e minut";
             // 
@@ -106,7 +112,7 @@
             this.cbxCategory.FormattingEnabled = true;
             this.cbxCategory.Location = new System.Drawing.Point(770, 351);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(242, 28);
+            this.cbxCategory.Size = new System.Drawing.Size(242, 45);
             this.cbxCategory.TabIndex = 5;
             this.cbxCategory.Text = "Historia";
             // 
@@ -116,7 +122,7 @@
             this.txtUrl.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtUrl.Location = new System.Drawing.Point(27, 352);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(420, 26);
+            this.txtUrl.Size = new System.Drawing.Size(420, 44);
             this.txtUrl.TabIndex = 6;
             this.txtUrl.Text = "http://";
             // 
@@ -153,7 +159,7 @@
             // btnNewCategory
             // 
             this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewCategory.Location = new System.Drawing.Point(1073, 351);
+            this.btnNewCategory.Location = new System.Drawing.Point(1073, 369);
             this.btnNewCategory.Name = "btnNewCategory";
             this.btnNewCategory.Size = new System.Drawing.Size(150, 56);
             this.btnNewCategory.TabIndex = 10;
@@ -163,7 +169,7 @@
             // btnSaveCategory
             // 
             this.btnSaveCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveCategory.Location = new System.Drawing.Point(1242, 352);
+            this.btnSaveCategory.Location = new System.Drawing.Point(1242, 369);
             this.btnSaveCategory.Name = "btnSaveCategory";
             this.btnSaveCategory.Size = new System.Drawing.Size(150, 56);
             this.btnSaveCategory.TabIndex = 11;
@@ -173,7 +179,7 @@
             // btnDeleteCategory
             // 
             this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteCategory.Location = new System.Drawing.Point(1407, 352);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(1408, 369);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(150, 56);
             this.btnDeleteCategory.TabIndex = 12;
@@ -214,11 +220,67 @@
             this.colCategory.Text = "Kategori";
             this.colCategory.Width = 120;
             // 
+            // lstCategory
+            // 
+            this.lstCategory.Location = new System.Drawing.Point(1073, 72);
+            this.lstCategory.Name = "lstCategory";
+            this.lstCategory.Size = new System.Drawing.Size(485, 211);
+            this.lstCategory.TabIndex = 14;
+            this.lstCategory.UseCompatibleStateImageBehavior = false;
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.Location = new System.Drawing.Point(1073, 290);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(484, 56);
+            this.txtCategory.TabIndex = 15;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(1073, 538);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(138, 51);
+            this.lblDescription.TabIndex = 16;
+            this.lblDescription.Text = "label1";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(1073, 476);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(138, 51);
+            this.lblTitle.TabIndex = 17;
+            this.lblTitle.Text = "label1";
+            // 
+            // lstEpisode
+            // 
+            this.lstEpisode.Location = new System.Drawing.Point(27, 538);
+            this.lstEpisode.Name = "lstEpisode";
+            this.lstEpisode.Size = new System.Drawing.Size(985, 314);
+            this.lstEpisode.TabIndex = 18;
+            this.lstEpisode.UseCompatibleStateImageBehavior = false;
+            // 
+            // lblEpisode
+            // 
+            this.lblEpisode.AutoSize = true;
+            this.lblEpisode.Location = new System.Drawing.Point(27, 484);
+            this.lblEpisode.Name = "lblEpisode";
+            this.lblEpisode.Size = new System.Drawing.Size(138, 51);
+            this.lblEpisode.TabIndex = 19;
+            this.lblEpisode.Text = "label1";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(25F, 51F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1570, 870);
+            this.Controls.Add(this.lblEpisode);
+            this.Controls.Add(this.lstEpisode);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtCategory);
+            this.Controls.Add(this.lstCategory);
             this.Controls.Add(this.lstPodcasts);
             this.Controls.Add(this.btnDeleteCategory);
             this.Controls.Add(this.btnSaveCategory);
@@ -262,5 +324,11 @@
         private ColumnHeader colName;
         private ColumnHeader colFrequency;
         private ColumnHeader colCategory;
+        private ListView lstCategory;
+        private TextBox txtCategory;
+        private Label lblDescription;
+        private Label lblTitle;
+        private ListView lstEpisode;
+        private Label lblEpisode;
     }
 }
