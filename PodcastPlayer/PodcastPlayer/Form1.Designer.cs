@@ -203,6 +203,7 @@
             this.lstPodcasts.UseCompatibleStateImageBehavior = false;
             this.lstPodcasts.View = System.Windows.Forms.View.Details;
             this.lstPodcasts.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstPodcasts_ItemSelectionChanged);
+            this.lstPodcasts.SelectedIndexChanged += new System.EventHandler(this.lstPodcasts_SelectedIndexChanged);
             // 
             // colEpisodes
             // 

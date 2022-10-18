@@ -1,5 +1,6 @@
 using BusinessLayer.Controllers;
 using Models;
+using System;
 
 namespace PodcastPlayer
 {
@@ -23,15 +24,28 @@ namespace PodcastPlayer
             item.SubItems.Add(podcast.PodName);
             lstPodcasts.Items.Add(item);
 
+
+
         }
 
         private void lstPodcasts_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            //Podcast podcast = podcastController.Podcasts[];
-            //foreach (var item in podcast.Episodes)
-            //{
-            //    lstEpisode.Items.Add(item.EpisodeName);
-            //}
+            
+        }
+
+        private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView.SelectedIndexCollection index = lstPodcasts.SelectedIndices;
+            lstEpisode.Items.Clear();
+
+            if (index.Count > 0)
+            {
+                Podcast podcast = podcastController.Podcasts[index[0]]; //samlingen index innehåller bara ett element som har index 0
+                foreach (var item in podcast.Episodes)
+                {
+                    lstEpisode.Items.Add(item.EpisodeName);
+                }
+            }
         }
     }
 }
