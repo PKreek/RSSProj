@@ -24,5 +24,10 @@ namespace Models
             Frequency = frequency;
             Category = category;
         }
+
+        public Podcast(string name)
+        {
+            PodName = name;
+        }
     }
 }

@@ -1,16 +1,20 @@
-﻿using System.ServiceModel.Syndication;
+﻿using DataAccessLayer;
+using Models;
+using System.ServiceModel.Syndication;
 using System.Xml;
 
 namespace DataAccess
 {
-    public static class FeedReader
+    public class FeedReader : IFeedReader
     {
-        public static SyndicationFeed ReadFeed (string url)
+        public Podcast ReadFeed (string url)
         {
             XmlReader reader = XmlReader.Create(url);
             SyndicationFeed feed = SyndicationFeed.Load(reader);
 
-            return feed;
+            Podcast podcast = new Podcast(feed.Title.Text);
+
+            return podcast;
         }
     }
 }
