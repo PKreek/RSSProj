@@ -23,14 +23,6 @@ namespace PodcastPlayer
             ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
             item.SubItems.Add(podcast.PodName);
             lstPodcasts.Items.Add(item);
-
-
-
-        }
-
-        private void lstPodcasts_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            
         }
 
         private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)
