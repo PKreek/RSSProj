@@ -38,5 +38,12 @@ namespace BusinessLayer.Controllers
             return podcastRepository.GetAll();
         }
 
+        public List<Episode> EpisodesList(Podcast podcast)
+        {
+            List<Episode> episodes = feedReader.GetEpisodesList(podcast.Url);
+
+            return episodes;
+        }
+
     }
 }

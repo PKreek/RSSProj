@@ -12,5 +12,6 @@ namespace DataAccessLayer
     {
 
         public Podcast ReadFeed(string url);
+        public List<Episode> GetEpisodesList(string url);
     }
 }
