@@ -179,6 +179,7 @@
             this.btnSaveCategory.TabIndex = 11;
             this.btnSaveCategory.Text = "Spara";
             this.btnSaveCategory.UseVisualStyleBackColor = true;
+            this.btnSaveCategory.Click += new System.EventHandler(this.btnSaveCategory_Click);
             // 
             // btnDeleteCategory
             // 

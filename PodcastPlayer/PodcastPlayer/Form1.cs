@@ -67,5 +67,10 @@ namespace PodcastPlayer
         {
             
         }
+
+        private void btnSaveCategory_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", UseShellExecute = true });
+        }
     }
 }
