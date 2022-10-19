@@ -2,6 +2,8 @@ using BusinessLayer.Controllers;
 using DataAccessLayer.Repository;
 using Models;
 using System;
+using System.Diagnostics;
+using System.Media;
 
 namespace PodcastPlayer
 {
@@ -27,6 +29,8 @@ namespace PodcastPlayer
             ListViewItem item = new ListViewItem(podcastController.EpisodesList(podcast).Count.ToString());
             item.SubItems.Add(podcast.PodName);
             lstPodcasts.Items.Add(item);
+            //SoundPlayer soundPlayer = new SoundPlayer(@"C:\Users\Patrick\Documents\GitHub\RSSProj\PodcastPlayer\DataAccess\Smash.wav");
+            //soundPlayer.Play();
         }
 
         private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,6 +59,11 @@ namespace PodcastPlayer
             foreach(var item in list)
             lstCategory.Items.Add(item.CatName);
 
+        }
+
+        private void btnSavePod_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=5xxQs34UMx4&ab_channel=SMASWL", UseShellExecute = true });
         }
     }
 }

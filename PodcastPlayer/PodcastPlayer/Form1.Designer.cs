@@ -147,6 +147,7 @@
             this.btnSavePod.TabIndex = 8;
             this.btnSavePod.Text = "Spara";
             this.btnSavePod.UseVisualStyleBackColor = true;
+            this.btnSavePod.Click += new System.EventHandler(this.btnSavePod_Click);
             // 
             // btnDeletePod
             // 
