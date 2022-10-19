@@ -22,6 +22,14 @@ namespace BusinessLayer.Controllers
             categoryRepository.Insert(category);
             return category;
         }
+        public List<Category> readCategory()
+        {
+            CategoryRepository catRep = new CategoryRepository();
+            List<Category> catList = catRep.GetAll();
+
+            return catList;
+   
+        }
     }
 
 }

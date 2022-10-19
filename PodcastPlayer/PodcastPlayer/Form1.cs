@@ -1,4 +1,5 @@
 using BusinessLayer.Controllers;
+using DataAccessLayer.Repository;
 using Models;
 using System;
 
@@ -12,7 +13,8 @@ namespace PodcastPlayer
         {
             InitializeComponent();
             podcastController = new PodcastController();
-            categoryController = new CategoryController(); 
+            categoryController = new CategoryController();
+            lasCategory();
         }
         //Podcast podcast = podcastController.Podcasts[];
         //foreach (var item in podcast.Episodes)
@@ -46,6 +48,13 @@ namespace PodcastPlayer
         {
             Category category = categoryController.AddCategory(txtCategory.Text);
             lstCategory.Items.Add(category.CatName);
+        }
+        public void lasCategory ()
+        {
+            List<Category> list = categoryController.readCategory();
+            foreach(var item in list)
+            lstCategory.Items.Add(item.CatName);
+
         }
     }
 }
