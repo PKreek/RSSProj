@@ -33,7 +33,7 @@ namespace DataAccessLayer.Repository
             }
             return listAvRegistreradeCategory;
         }
-        public Category GetById(string id)
+        public Category GetByID(string id)
         {
             Category category = null;
             foreach(var item in CategorySerializer.Deserialize())
@@ -68,9 +68,6 @@ namespace DataAccessLayer.Repository
             CategorySerializer.Serialize(ListOfCategories);
         }
 
-        public Category GetByID(string id)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -167,6 +167,7 @@
             this.btnNewCategory.TabIndex = 10;
             this.btnNewCategory.Text = "Ny...";
             this.btnNewCategory.UseVisualStyleBackColor = true;
+            this.btnNewCategory.Click += new System.EventHandler(this.btnNewCategory_Click);
             // 
             // btnSaveCategory
             // 

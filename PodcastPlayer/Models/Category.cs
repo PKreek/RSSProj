@@ -10,5 +10,18 @@ namespace Models
     {
         public int CategoryId { get; set; }
         public string CatName { get; set; }
+        public Category(string catName, int catId)
+        {
+            CatName = catName;
+            CategoryId = catId;
+        }
+        public Category(string catName)
+        {
+            CatName = catName;
+        }
+        public Category()
+        {
+
+        }
     }
 }

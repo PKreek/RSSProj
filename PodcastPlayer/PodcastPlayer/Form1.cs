@@ -7,10 +7,12 @@ namespace PodcastPlayer
     public partial class Form1 : Form
     {
         PodcastController podcastController;
+        CategoryController categoryController;
         public Form1()
         {
             InitializeComponent();
             podcastController = new PodcastController();
+            categoryController = new CategoryController(); 
         }
         //Podcast podcast = podcastController.Podcasts[];
         //foreach (var item in podcast.Episodes)
@@ -38,6 +40,12 @@ namespace PodcastPlayer
                     lstEpisode.Items.Add(item.EpisodeName);
                 }
             }
+        }
+
+        private void btnNewCategory_Click(object sender, EventArgs e)
+        {
+            Category category = categoryController.AddCategory(txtCategory.Text);
+            lstCategory.Items.Add(category.CatName);
         }
     }
 }
