@@ -264,12 +264,14 @@
             this.lstEpisode.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lstEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lstEpisode.FullRowSelect = true;
             this.lstEpisode.Location = new System.Drawing.Point(27, 538);
             this.lstEpisode.Name = "lstEpisode";
             this.lstEpisode.Size = new System.Drawing.Size(985, 314);
             this.lstEpisode.TabIndex = 18;
             this.lstEpisode.UseCompatibleStateImageBehavior = false;
             this.lstEpisode.View = System.Windows.Forms.View.Details;
+            this.lstEpisode.SelectedIndexChanged += new System.EventHandler(this.lstEpisode_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

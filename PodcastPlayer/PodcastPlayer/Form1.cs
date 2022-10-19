@@ -62,5 +62,10 @@ namespace PodcastPlayer
         {
             Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=5xxQs34UMx4&ab_channel=SMASWL", UseShellExecute = true });
         }
+
+        private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
