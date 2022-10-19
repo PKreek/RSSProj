@@ -23,7 +23,7 @@ namespace DataAccessLayer
         }
         public void Serialize(List<T> list)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>));
             using (FileStream xmlOut =
                 new FileStream(fileName, FileMode.Create, FileAccess.Write))
             {

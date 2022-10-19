@@ -32,7 +32,7 @@ namespace PodcastPlayer
 
             if (index.Count > 0)
             {
-                Podcast podcast = podcastController.Podcasts[index[0]]; //samlingen index innehåller bara ett element som har index 0
+                Podcast podcast = podcastController.RetrieveAllPods()[index[0]]; //samlingen index innehåller bara ett element som har index 0
                 foreach (var item in podcast.Episodes)
                 {
                     lstEpisode.Items.Add(item.EpisodeName);
