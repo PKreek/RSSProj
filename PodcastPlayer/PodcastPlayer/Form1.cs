@@ -3,7 +3,6 @@ using DataAccessLayer.Repository;
 using Models;
 using System;
 using System.Diagnostics;
-using System.Media;
 
 namespace PodcastPlayer
 {
@@ -29,8 +28,6 @@ namespace PodcastPlayer
             ListViewItem item = new ListViewItem(podcastController.EpisodesList(podcast).Count.ToString());
             item.SubItems.Add(podcast.PodName);
             lstPodcasts.Items.Add(item);
-            //SoundPlayer soundPlayer = new SoundPlayer(@"C:\Users\Patrick\Documents\GitHub\RSSProj\PodcastPlayer\DataAccess\Smash.wav");
-            //soundPlayer.Play();
         }
 
         private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)
