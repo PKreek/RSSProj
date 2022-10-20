@@ -14,12 +14,13 @@ namespace BusinessLayer.Controllers
     {
         IRepository<Podcast> podcastRepository;
         IFeedReader feedReader;
-        //public List<Podcast> Podcasts { get; set; }
+        public List<Podcast> Podcasts { get; set; }
+        List<List<Episode>> episodes;
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
             feedReader = new FeedReader();
-            //Podcasts = new List<Podcast>();
+            RetrieveAllPods();
         }
 
         //public void CreatePodcast(string episode, string name, double frequency, string category)
@@ -31,18 +32,58 @@ namespace BusinessLayer.Controllers
         {
             Podcast podcast = feedReader.ReadFeed(url);
             podcastRepository.Insert(podcast);
+            RetrieveAllPods();
             return podcast;
         }
-        public List<Podcast> RetrieveAllPods()
+        //public List<Podcast> RetrieveAllPods()
+        //{
+        //    return podcastRepository.GetAll();
+        //}
+
+        private void RetrieveAllPods()
         {
-            return podcastRepository.GetAll();
+            Podcasts = podcastRepository.GetAll();
+            RetrieveAllEpisodes();
         }
+
+        private void RetrieveAllEpisodes()
+        {
+            episodes = new List<List<Episode>>();
+            for(int i = 0; i < Podcasts.Count; i++)
+            {
+                episodes.Add(feedReader.GetEpisodesList(Podcasts[i].Url));
+            }
+        }
+
+        //public List<Episode> EpisodesList(Podcast podcast)
+        //{
+        //    List<Episode> episodes = feedReader.GetEpisodesList(podcast.Url);
+
+        //    return episodes;
+        //}
 
         public List<Episode> EpisodesList(Podcast podcast)
         {
-            List<Episode> episodes = feedReader.GetEpisodesList(podcast.Url);
+            int index = Podcasts.IndexOf(podcast);
 
-            return episodes;
+            return episodes[index];
+        }
+
+        public int NumberOfEpisodes(Podcast podcast)
+        {
+            int returnvalue;
+            int index = Podcasts.IndexOf(podcast);
+
+            if(index == -1)
+            { 
+                returnvalue = 0;
+            } 
+            else
+            {
+                returnvalue = episodes[index].Count;
+            }
+
+            return returnvalue;
         }
 
     }

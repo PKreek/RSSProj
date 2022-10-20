@@ -25,7 +25,7 @@ namespace PodcastPlayer
         private void btnNewPod_Click(object sender, EventArgs e)
         {
             Podcast podcast = podcastController.AddPodcast(txtUrl.Text);
-            ListViewItem item = new ListViewItem(podcastController.EpisodesList(podcast).Count.ToString());
+            ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podcast).ToString());
             item.SubItems.Add(podcast.PodName);
             lstPodcasts.Items.Add(item);
         }
@@ -37,7 +37,7 @@ namespace PodcastPlayer
 
             if (index.Count > 0)
             {
-                Podcast podcast = podcastController.RetrieveAllPods()[index[0]]; //samlingen index innehåller bara ett element som har index 0
+                Podcast podcast = podcastController.Podcasts[index[0]]; //samlingen index innehåller bara ett element som har index 0
                 foreach (var item in podcastController.EpisodesList(podcast)) 
                 {
                     lstEpisode.Items.Add(item.EpisodeName);
