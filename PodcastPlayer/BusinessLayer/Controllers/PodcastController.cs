@@ -16,7 +16,7 @@ namespace BusinessLayer.Controllers
         IRepository<Podcast> podcastRepository;
         IFeedReader feedReader;
         public List<Podcast> Podcasts;
-        List<List<Episode>> episodes;
+        List<List<Episode>> episodes = new List<List<Episode>>();
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
@@ -49,7 +49,7 @@ namespace BusinessLayer.Controllers
         }
         private void RetrieveAllPods()
         {
-            Podcasts = podcastRepository.GetAll();
+            //Podcasts = podcastRepository.GetAll();
             RetrieveAllEpisodes();
         }
 
@@ -79,7 +79,14 @@ namespace BusinessLayer.Controllers
         public int NumberOfEpisodes(int index)
         {
             Console.WriteLine(episodes);
-            return episodes[index].Count;
+            if(episodes.Count > index)
+            {
+                return episodes[index].Count;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public List<Podcast> readPodcast()

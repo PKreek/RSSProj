@@ -69,13 +69,17 @@ namespace PodcastPlayer
         {
             List<Podcast> list = podcastController.Podcasts;
             int podIndex = 0;
-            foreach (var podcast in list)
+            if(list.Count > 0)
             {
-                ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
-                item.SubItems.Add(podcast.PodName);
-                lstPodcasts.Items.Add(item);
-                podIndex++;
+                foreach (var podcast in list)
+                {
+                    ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
+                    item.SubItems.Add(podcast.PodName);
+                    lstPodcasts.Items.Add(item);
+                    podIndex++;
+                }
             }
+            
         }
         public void fillCategoryCbx()
         {
