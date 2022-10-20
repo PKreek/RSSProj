@@ -17,6 +17,7 @@ namespace PodcastPlayer
             podcastController = new PodcastController();
             categoryController = new CategoryController();
             lasCategory();
+            fillCategoryCbx();
         }
         //Podcast podcast = podcastController.Podcasts[];
         //foreach (var item in podcast.Episodes)
@@ -59,6 +60,14 @@ namespace PodcastPlayer
             lstCategory.Items.Add(item.CatName);
 
         }
+        public void fillCategoryCbx()
+        {
+            List<Category> list = categoryController.readCategory();
+            foreach(var item in list)
+            {
+                cbxCategory.Items.Add(item.CatName);
+            }
+        }
 
         private void btnSavePod_Click(object sender, EventArgs e)
         {
@@ -73,6 +82,10 @@ namespace PodcastPlayer
         private void btnSaveCategory_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", UseShellExecute = true });
+        }
+        private void txtUrl_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtUrl.Clear();
         }
     }
 }

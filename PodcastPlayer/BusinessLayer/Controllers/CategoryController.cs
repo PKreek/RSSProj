@@ -24,12 +24,14 @@ namespace BusinessLayer.Controllers
         }
         public List<Category> readCategory()
         {
-            CategoryRepository catRep = new CategoryRepository();
-            List<Category> catList = catRep.GetAll();
+            //CategoryRepository catRep = new CategoryRepository();
+            List<Category> catList = categoryRepository.GetAll();
 
             return catList;
    
         }
+
+
     }
 
 }
