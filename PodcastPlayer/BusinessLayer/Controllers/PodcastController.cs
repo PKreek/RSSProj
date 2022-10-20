@@ -15,13 +15,14 @@ namespace BusinessLayer.Controllers
     {
         IRepository<Podcast> podcastRepository;
         IFeedReader feedReader;
-        public List<Podcast> Podcasts { get; set; }
+        public List<Podcast> Podcasts;
         List<List<Episode>> episodes;
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
             feedReader = new FeedReader();
-            RetrieveAllPods();
+            //RetrieveAllPods();
+            readPodcast();
         }
 
         //public void CreatePodcast(string episode, string name, double frequency, string category)
@@ -32,7 +33,8 @@ namespace BusinessLayer.Controllers
         public Podcast AddPodcast(string url)
         {
             Podcast podcast = feedReader.ReadFeed(url);
-            podcastRepository.Insert(podcast);
+            //podcastRepository.Insert(podcast);
+            Podcasts.Add(podcast);
             RetrieveAllPods();
             return podcast;
         }
@@ -40,7 +42,11 @@ namespace BusinessLayer.Controllers
         //{
         //    return podcastRepository.GetAll();
         //}
-
+        public void SavePodcast()
+        {
+            //Podcast podcast = feedReader.ReadFeed(url);
+            podcastRepository.Insert(Podcasts);
+        }
         private void RetrieveAllPods()
         {
             Podcasts = podcastRepository.GetAll();
@@ -50,10 +56,10 @@ namespace BusinessLayer.Controllers
         private void RetrieveAllEpisodes()
         {
             episodes = new List<List<Episode>>();
-            for(int i = 0; i < Podcasts.Count; i++)
-            {
-                episodes.Add(feedReader.GetEpisodesList(Podcasts[i].Url));
-            }
+                for (int i = 0; i < Podcasts.Count; i++)
+                {
+                    episodes.Add(feedReader.GetEpisodesList(Podcasts[i].Url));
+                }
         }
 
         //public List<Episode> EpisodesList(Podcast podcast)
@@ -72,6 +78,7 @@ namespace BusinessLayer.Controllers
 
         public int NumberOfEpisodes(int index)
         {
+            Console.WriteLine(episodes);
             return episodes[index].Count;
         }
 

@@ -10,7 +10,7 @@ namespace DataAccessLayer.Repository
     {
         List<T> GetAll();
         T GetByID(string id);
-        void Insert(T theObject);
+        void Insert(List<T> theObject);
         void Update(int index, T theObject);
         void Delete(int index);
         void SaveChanges();

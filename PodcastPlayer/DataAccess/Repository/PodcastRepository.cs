@@ -44,9 +44,9 @@ namespace DataAccessLayer.Repository
             }
             return podcast;
         }
-        public void Insert(Podcast theObject)
+        public void Insert(List<Podcast> theObject)
         {
-            ListOfPodcasts.Add(theObject);
+            ListOfPodcasts = theObject;
             SaveChanges();
         }
         public void Update(int index, Podcast theNewObject)

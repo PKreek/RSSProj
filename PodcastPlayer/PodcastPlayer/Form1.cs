@@ -1,5 +1,4 @@
 using BusinessLayer.Controllers;
-using DataAccessLayer.Repository;
 using Models;
 using System;
 using System.Diagnostics;
@@ -68,13 +67,14 @@ namespace PodcastPlayer
 
         public void readPodcast()
         {
-            List<Podcast> list = podcastController.readPodcast();
-            int podIndex = lstPodcasts.Items.Count;
-            ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
+            List<Podcast> list = podcastController.Podcasts;
+            int podIndex = 0;
             foreach (var podcast in list)
             {
+                ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
                 item.SubItems.Add(podcast.PodName);
                 lstPodcasts.Items.Add(item);
+                podIndex++;
             }
         }
         public void fillCategoryCbx()
@@ -89,6 +89,7 @@ namespace PodcastPlayer
         private void btnSavePod_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=5xxQs34UMx4&ab_channel=SMASWL", UseShellExecute = true });
+            podcastController.SavePodcast();
         }
 
         private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)

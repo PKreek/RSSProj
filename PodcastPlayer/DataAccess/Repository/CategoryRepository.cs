@@ -45,9 +45,9 @@ namespace DataAccessLayer.Repository
             }
             return category;
         }
-        public void Insert ( Category theObject)
+        public void Insert (List<Category> theObject)
         {
-            ListOfCategories.Add(theObject);
+            ListOfCategories = theObject;
             SaveChanges();
         }
         public void Update (int index, Category theNewObject)

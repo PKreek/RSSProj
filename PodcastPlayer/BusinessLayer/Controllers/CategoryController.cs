@@ -11,6 +11,7 @@ namespace BusinessLayer.Controllers
     public class CategoryController
     {
         IRepository<Category> categoryRepository;
+        public List<Category> categories { get; set; }
 
         public CategoryController()
         {
@@ -19,15 +20,15 @@ namespace BusinessLayer.Controllers
         public Category AddCategory(string catName)
         {
             Category category = new Category(catName);
-            categoryRepository.Insert(category);
+            categoryRepository.Insert(categories);
             return category;
         }
         public List<Category> readCategory()
         {
             //CategoryRepository catRep = new CategoryRepository();
-            List<Category> catList = categoryRepository.GetAll();
+            categories = categoryRepository.GetAll();
 
-            return catList;
+            return categories;
    
         }
 
