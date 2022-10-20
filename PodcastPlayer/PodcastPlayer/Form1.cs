@@ -2,6 +2,7 @@ using BusinessLayer.Controllers;
 using Models;
 using System;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace PodcastPlayer
 {
@@ -41,7 +42,7 @@ namespace PodcastPlayer
             if (index.Count > 0)
             {
                 Podcast podcast = podcastController.Podcasts[index[0]]; //samlingen index innehåller bara ett element som har index 0
-                foreach (var item in podcastController.EpisodesList(podcast)) 
+                foreach (var item in podcastController.EpisodesList(podcast))
                 {
                     lstEpisode.Items.Add(item.EpisodeName);
                 }
@@ -55,7 +56,7 @@ namespace PodcastPlayer
             cbxCategory.Items.Clear();
             fillCategoryCbx();
         }
-        public void lasCategory ()
+        public void lasCategory()
         {
             List<Category> list = categoryController.readCategory();
             foreach (var item in list)
@@ -69,7 +70,7 @@ namespace PodcastPlayer
         {
             List<Podcast> list = podcastController.Podcasts;
             int podIndex = 0;
-            if(list.Count > 0)
+            if (list.Count > 0)
             {
                 foreach (var podcast in list)
                 {
@@ -79,12 +80,12 @@ namespace PodcastPlayer
                     podIndex++;
                 }
             }
-            
+
         }
         public void fillCategoryCbx()
         {
             List<Category> list = categoryController.readCategory();
-            foreach(var item in list)
+            foreach (var item in list)
             {
                 cbxCategory.Items.Add(item.CatName);
             }
@@ -98,7 +99,14 @@ namespace PodcastPlayer
 
         private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            ListView.SelectedIndexCollection index = lstEpisode.SelectedIndices;
+            ListView.SelectedIndexCollection index2 = lstPodcasts.SelectedIndices;
+
+            if (index.Count > 0)
+            {
+                    lblEpisode.Text = ("Podcast #" + index2[0] + " Avsnitt " + index[0]);
+            }
+
         }
 
         private void btnSaveCategory_Click(object sender, EventArgs e)
