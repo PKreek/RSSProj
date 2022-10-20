@@ -74,5 +74,11 @@ namespace BusinessLayer.Controllers
         {
             return episodes[index].Count;
         }
+
+        public List<Podcast> readPodcast()
+        {
+            Podcasts = podcastRepository.GetAll();
+            return Podcasts;
+        }
     }
 }

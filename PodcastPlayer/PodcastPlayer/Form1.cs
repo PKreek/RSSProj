@@ -18,6 +18,7 @@ namespace PodcastPlayer
             categoryController = new CategoryController();
             lasCategory();
             fillCategoryCbx();
+            readPodcast();
         }
         //Podcast podcast = podcastController.Podcasts[];
         //foreach (var item in podcast.Episodes)
@@ -63,6 +64,18 @@ namespace PodcastPlayer
                 lstCategory.Items.Add(item.CatName);
             }
 
+        }
+
+        public void readPodcast()
+        {
+            List<Podcast> list = podcastController.readPodcast();
+            int podIndex = lstPodcasts.Items.Count;
+            ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
+            foreach (var podcast in list)
+            {
+                item.SubItems.Add(podcast.PodName);
+                lstPodcasts.Items.Add(item);
+            }
         }
         public void fillCategoryCbx()
         {
