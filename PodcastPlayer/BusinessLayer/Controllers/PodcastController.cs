@@ -7,6 +7,7 @@ using Models;
 using DataAccessLayer;
 using DataAccessLayer.Repository;
 using DataAccess;
+using System.Reflection;
 
 namespace BusinessLayer.Controllers
 {
@@ -69,22 +70,9 @@ namespace BusinessLayer.Controllers
             return episodes[index];
         }
 
-        public int NumberOfEpisodes(Podcast podcast)
+        public int NumberOfEpisodes(int index)
         {
-            int returnvalue;
-            int index = Podcasts.IndexOf(podcast);
-
-            if(index == -1)
-            { 
-                returnvalue = 0;
-            } 
-            else
-            {
-                returnvalue = episodes[index].Count;
-            }
-
-            return returnvalue;
+            return episodes[index].Count;
         }
-
     }
 }

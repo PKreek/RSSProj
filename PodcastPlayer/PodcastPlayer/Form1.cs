@@ -10,6 +10,7 @@ namespace PodcastPlayer
     {
         PodcastController podcastController;
         CategoryController categoryController;
+
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace PodcastPlayer
         private void btnNewPod_Click(object sender, EventArgs e)
         {
             Podcast podcast = podcastController.AddPodcast(txtUrl.Text);
-            ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podcast).ToString());
+            int podIndex = lstPodcasts.Items.Count;
+            ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
             item.SubItems.Add(podcast.PodName);
             lstPodcasts.Items.Add(item);
         }
