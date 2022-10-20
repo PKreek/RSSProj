@@ -52,6 +52,8 @@ namespace PodcastPlayer
         {
             Category category = categoryController.AddCategory(txtCategory.Text);
             lstCategory.Items.Add(category.CatName);
+            cbxCategory.Items.Clear();
+            fillCategoryCbx();
         }
         public void lasCategory ()
         {
