@@ -58,8 +58,10 @@ namespace PodcastPlayer
         public void lasCategory ()
         {
             List<Category> list = categoryController.readCategory();
-            foreach(var item in list)
-            lstCategory.Items.Add(item.CatName);
+            foreach (var item in list)
+            {
+                lstCategory.Items.Add(item.CatName);
+            }
 
         }
         public void fillCategoryCbx()
