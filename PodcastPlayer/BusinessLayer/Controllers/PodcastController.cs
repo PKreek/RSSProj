@@ -23,6 +23,7 @@ namespace BusinessLayer.Controllers
             feedReader = new FeedReader();
             //RetrieveAllPods();
             readPodcast();
+            RetrieveAllEpisodes();
         }
 
         //public void CreatePodcast(string episode, string name, double frequency, string category)
@@ -79,14 +80,14 @@ namespace BusinessLayer.Controllers
         public int NumberOfEpisodes(int index)
         {
             Console.WriteLine(episodes);
-            if(episodes.Count > index)
-            {
+            //if(episodes.Count > index)
+            //{
                 return episodes[index].Count;
-            }
-            else
-            {
-                return 0;
-            }
+            //}
+            //else
+            //{
+            //    return 0;
+            //}
         }
 
         public List<Podcast> readPodcast()
