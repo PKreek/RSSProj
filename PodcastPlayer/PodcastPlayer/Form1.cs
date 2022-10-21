@@ -81,6 +81,8 @@ namespace PodcastPlayer
                 {
                     ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
                     item.SubItems.Add(podcast.PodName);
+                    item.SubItems.Add(podcast.Frequency.ToString());
+                    item.SubItems.Add(podcast.Category);
                     lstPodcasts.Items.Add(item);
                     podIndex++;
                 }
