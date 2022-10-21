@@ -27,11 +27,16 @@ namespace PodcastPlayer
         //}
         private void btnNewPod_Click(object sender, EventArgs e)
         {
-            Podcast podcast = podcastController.AddPodcast(txtUrl.Text);
+            string catName = cbxCategory.SelectedItem.ToString();
+            Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
             int podIndex = lstPodcasts.Items.Count;
             ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
             item.SubItems.Add(podcast.PodName);
+            item.SubItems.Add(podcast.Frequency.ToString());
+            item.SubItems.Add(podcast.Category);
+
             lstPodcasts.Items.Add(item);
+           
         }
 
         private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)

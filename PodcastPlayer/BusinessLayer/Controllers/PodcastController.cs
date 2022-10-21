@@ -26,10 +26,11 @@ namespace BusinessLayer.Controllers
             RetrieveEpisodes();
         }
 
-        public Podcast AddPodcast(string url)
+        public Podcast AddPodcast(string url, string catName)
         {
             Podcast podcast = feedReader.ReadFeed(url);
             Podcasts.Add(podcast);
+            podcast.Category = catName;
             RetrieveEpisodes();
             return podcast;
         }

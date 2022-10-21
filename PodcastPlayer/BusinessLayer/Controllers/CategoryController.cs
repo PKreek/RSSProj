@@ -31,6 +31,19 @@ namespace BusinessLayer.Controllers
             return categories;
    
         }
+        //public string ReturnCat(string namn)
+        //{
+        //    string obj = "";
+        //    foreach (var category in categories)
+        //    {
+        //        if(category.CatName == namn)
+        //        {
+        //            obj = category;
+        //        }
+              
+        //    }
+        //    return obj;
+        //}
 
         public void SaveCategory()
         {
