@@ -22,15 +22,15 @@ namespace DataAccessLayer.Repository
 
         public List<Podcast> GetAll()
         {
-            List<Podcast> listAvRegistreradePodcast = new List<Podcast>();
+
             try
             {
-                listAvRegistreradePodcast = PodcastSerializer.Deserialize();
+                ListOfPodcasts = PodcastSerializer.Deserialize();
             }
             catch (Exception)
             {
             }
-            return listAvRegistreradePodcast;
+            return ListOfPodcasts;
         }
         public Podcast GetByID(string id)
         {

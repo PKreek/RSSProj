@@ -22,16 +22,15 @@ namespace DataAccessLayer.Repository
 
         public List<Category> GetAll()
         {
-            List<Category> listAvRegistreradeCategory = new List<Category>(); 
             try
             {
-                listAvRegistreradeCategory = CategorySerializer.Deserialize();
+                ListOfCategories = CategorySerializer.Deserialize();
             }
             catch (Exception)
             {
 
             }
-            return listAvRegistreradeCategory;
+            return ListOfCategories;
         }
         public Category GetByID(string id)
         {
