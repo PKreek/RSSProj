@@ -22,15 +22,15 @@ namespace BusinessLayer.Controllers
         {
             podcastRepository = new PodcastRepository();
             feedReader = new FeedReader();
-            readPodcast();
-            RetrieveAllEpisodes();
+            RetrievePodcasts();
+            RetrieveEpisodes();
         }
 
         public Podcast AddPodcast(string url)
         {
             Podcast podcast = feedReader.ReadFeed(url);
             Podcasts.Add(podcast);
-            RetrieveAllEpisodes();
+            RetrieveEpisodes();
             return podcast;
         }
 
@@ -39,7 +39,7 @@ namespace BusinessLayer.Controllers
             podcastRepository.Insert(Podcasts);
         }
 
-        private void RetrieveAllEpisodes()
+        private void RetrieveEpisodes()
         {
             episodes = new List<List<Episode>>();
 
@@ -61,10 +61,9 @@ namespace BusinessLayer.Controllers
             return episodes[index].Count;
         }
       
-        public List<Podcast> readPodcast()
+        private void RetrievePodcasts()
         {
             Podcasts = podcastRepository.GetAll();
-            return Podcasts;
         }
     }
 }
