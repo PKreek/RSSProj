@@ -17,6 +17,7 @@ namespace BusinessLayer.Controllers
         IFeedReader feedReader;
         public List<Podcast> Podcasts;
         List<List<Episode>> episodes = new List<List<Episode>>();
+
         public PodcastController()
         {
             podcastRepository = new PodcastRepository();
@@ -24,30 +25,30 @@ namespace BusinessLayer.Controllers
             readPodcast();
             RetrieveAllEpisodes();
         }
+
         public Podcast AddPodcast(string url)
         {
             Podcast podcast = feedReader.ReadFeed(url);
             Podcasts.Add(podcast);
-            RetrieveAllPods();
+            RetrieveAllEpisodes();
             return podcast;
         }
+
         public void SavePodcast()
         {
             podcastRepository.Insert(Podcasts);
-        }
-        private void RetrieveAllPods()
-        {
-            RetrieveAllEpisodes();
         }
 
         private void RetrieveAllEpisodes()
         {
             episodes = new List<List<Episode>>();
-                for (int i = 0; i < Podcasts.Count; i++)
-                {
-                    episodes.Add(feedReader.GetEpisodesList(Podcasts[i].Url));
-                }
+
+            for (int i = 0; i < Podcasts.Count; i++)
+            {
+                episodes.Add(feedReader.GetEpisodesList(Podcasts[i].Url));
+            }
         }
+
         public List<Episode> EpisodesList(Podcast podcast)
         {
             int index = Podcasts.IndexOf(podcast);
