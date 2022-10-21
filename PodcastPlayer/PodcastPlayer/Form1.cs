@@ -53,8 +53,8 @@ namespace PodcastPlayer
         {
             Category category = categoryController.AddCategory(txtCategory.Text);
             lstCategory.Items.Add(category.CatName);
-            cbxCategory.Items.Clear();
-            fillCategoryCbx();
+            
+            
         }
         public void lasCategory()
         {
@@ -93,8 +93,8 @@ namespace PodcastPlayer
 
         private void btnSavePod_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=5xxQs34UMx4&ab_channel=SMASWL", UseShellExecute = true });
             podcastController.SavePodcast();
+            
         }
 
         private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,7 +111,9 @@ namespace PodcastPlayer
 
         private void btnSaveCategory_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley", UseShellExecute = true });
+            categoryController.SaveCategory();
+            cbxCategory.Items.Clear();
+            fillCategoryCbx();
         }
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
         {
