@@ -21,36 +21,22 @@ namespace BusinessLayer.Controllers
         {
             podcastRepository = new PodcastRepository();
             feedReader = new FeedReader();
-            //RetrieveAllPods();
             readPodcast();
             RetrieveAllEpisodes();
         }
-
-        //public void CreatePodcast(string episode, string name, double frequency, string category)
-        //{
-        //    Podcast podcastObj = new Podcast(episode, name, frequency, category);
-        //    podcastRepository.Insert(podcastObj);
-        //}
         public Podcast AddPodcast(string url)
         {
             Podcast podcast = feedReader.ReadFeed(url);
-            //podcastRepository.Insert(podcast);
             Podcasts.Add(podcast);
             RetrieveAllPods();
             return podcast;
         }
-        //public List<Podcast> RetrieveAllPods()
-        //{
-        //    return podcastRepository.GetAll();
-        //}
         public void SavePodcast()
         {
-            //Podcast podcast = feedReader.ReadFeed(url);
             podcastRepository.Insert(Podcasts);
         }
         private void RetrieveAllPods()
         {
-            //Podcasts = podcastRepository.GetAll();
             RetrieveAllEpisodes();
         }
 
@@ -62,14 +48,6 @@ namespace BusinessLayer.Controllers
                     episodes.Add(feedReader.GetEpisodesList(Podcasts[i].Url));
                 }
         }
-
-        //public List<Episode> EpisodesList(Podcast podcast)
-        //{
-        //    List<Episode> episodes = feedReader.GetEpisodesList(podcast.Url);
-
-        //    return episodes;
-        //}
-
         public List<Episode> EpisodesList(Podcast podcast)
         {
             int index = Podcasts.IndexOf(podcast);
@@ -79,17 +57,9 @@ namespace BusinessLayer.Controllers
 
         public int NumberOfEpisodes(int index)
         {
-            Console.WriteLine(episodes);
-            //if(episodes.Count > index)
-            //{
-                return episodes[index].Count;
-            //}
-            //else
-            //{
-            //    return 0;
-            //}
+            return episodes[index].Count;
         }
-
+      
         public List<Podcast> readPodcast()
         {
             Podcasts = podcastRepository.GetAll();
