@@ -1,6 +1,8 @@
 ﻿using DataAccessLayer;
 using Models;
+using System.Net;
 using System.ServiceModel.Syndication;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace DataAccess
@@ -16,7 +18,9 @@ namespace DataAccess
 
             foreach (SyndicationItem item in feed.Items)
             {
-                Episode episode = new Episode(item.Title.Text, item.Summary.Text);
+                string description = item.Summary.Text;
+                description = Regex.Replace(description, @"<.+?>", String.Empty);
+                Episode episode = new Episode(item.Title.Text, description);
                 podcast.Episodes.Add(episode);
             }
 
