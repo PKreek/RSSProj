@@ -16,7 +16,7 @@ namespace BusinessLayer.Controllers
         IRepository<Podcast> podcastRepository;
         IFeedReader feedReader;
         public List<Podcast> Podcasts;
-        List<List<Episode>> episodes = new List<List<Episode>>();
+        //List<List<Episode>> episodes = new List<List<Episode>>();
 
         public PodcastController()
         {

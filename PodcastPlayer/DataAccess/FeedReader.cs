@@ -16,29 +16,29 @@ namespace DataAccess
 
             foreach (SyndicationItem item in feed.Items)
             {
-                Episode episode = new Episode(item.Title.Text);
+                Episode episode = new Episode(item.Title.Text, item.Summary.Text);
                 podcast.Episodes.Add(episode);
             }
 
             return podcast;
         }
 
-        public List<Episode> GetEpisodesList(string url)
-        {
-            XmlReader reader = XmlReader.Create(url);
-            SyndicationFeed feed = SyndicationFeed.Load(reader);
+        //public List<Episode> GetEpisodesList(string url)
+        //{
+        //    XmlReader reader = XmlReader.Create(url);
+        //    SyndicationFeed feed = SyndicationFeed.Load(reader);
 
-            List<Episode> episodes = new List<Episode>();
+        //    List<Episode> episodes = new List<Episode>();
 
 
-            foreach (SyndicationItem item in feed.Items)
-            {
-                Episode episode = new Episode(item.Title.Text);
-                episodes.Add(episode);
-            }
+        //    foreach (SyndicationItem item in feed.Items)
+        //    {
+        //        Episode episode = new Episode(item.Title.Text);
+        //        episodes.Add(episode);
+        //    }
 
-            return episodes;
-        }
+        //    return episodes;
+        //}
 
     }
 }

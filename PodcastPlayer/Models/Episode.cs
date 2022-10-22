@@ -12,13 +12,14 @@ namespace Models
         public string EpisodeName { get; set; }
         public int EpisodeNumber { get; set; }
         public DateTime EpisodeDate { get; set; }
+        public string EpisodeDescription { get; set; }
         
         public Episode() { }
         
-        public Episode(string name)
+        public Episode(string name, string description)
         {
-            
             EpisodeName = name;
+            EpisodeDescription = description;
         }
     }
 
