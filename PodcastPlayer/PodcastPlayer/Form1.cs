@@ -19,6 +19,8 @@ namespace PodcastPlayer
             lasCategory();
             fillCategoryCbx();
             readPodcast();
+            lblDescription.AutoSize = true;
+            lblDescription.MaximumSize = new Size(400, 0);
         }
         //Podcast podcast = podcastController.Podcasts[];
         //foreach (var item in podcast.Episodes)
