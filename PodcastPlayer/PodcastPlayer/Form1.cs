@@ -29,13 +29,14 @@ namespace PodcastPlayer
         {
             string catName = cbxCategory.SelectedItem.ToString();
             Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
-            int podIndex = lstPodcasts.Items.Count;
-            ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
-            item.SubItems.Add(podcast.PodName);
-            item.SubItems.Add(podcast.Frequency.ToString());
-            item.SubItems.Add(podcast.Category);
 
-            lstPodcasts.Items.Add(item);
+            readPodcast();
+            //ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
+            //item.SubItems.Add(podcast.PodName);
+            //item.SubItems.Add(podcast.Frequency.ToString());
+            //item.SubItems.Add(podcast.Category);
+
+            //lstPodcasts.Items.Add(item);
            
         }
 
@@ -74,7 +75,8 @@ namespace PodcastPlayer
         public void readPodcast()
         {
             List<Podcast> list = podcastController.Podcasts;
-            int podIndex = 0;
+            lstPodcasts.Items.Clear();
+
             if (list.Count > 0)
             {
                 foreach (var podcast in list)
@@ -84,7 +86,6 @@ namespace PodcastPlayer
                     item.SubItems.Add(podcast.Frequency.ToString());
                     item.SubItems.Add(podcast.Category);
                     lstPodcasts.Items.Add(item);
-                    podIndex++;
                 }
             }
 
