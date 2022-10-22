@@ -14,6 +14,12 @@ namespace DataAccess
 
             Podcast podcast = new Podcast(feed.Title.Text, url);
 
+            foreach (SyndicationItem item in feed.Items)
+            {
+                Episode episode = new Episode(item.Title.Text);
+                podcast.Episodes.Add(episode);
+            }
+
             return podcast;
         }
 

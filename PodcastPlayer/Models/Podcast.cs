@@ -15,7 +15,7 @@ namespace Models
 
         public string Url { get; set; }
 
-        
+        public List<Episode> Episodes { get; set; }
 
         public Podcast()
         {
@@ -34,7 +34,7 @@ namespace Models
         {
             PodName = name;
             Url = url;
-            //Episodes = new List<Episode>();
+            Episodes = new List<Episode>();
         }
 
        

@@ -30,7 +30,7 @@ namespace PodcastPlayer
             string catName = cbxCategory.SelectedItem.ToString();
             Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
             int podIndex = lstPodcasts.Items.Count;
-            ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
+            ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
             item.SubItems.Add(podcast.PodName);
             item.SubItems.Add(podcast.Frequency.ToString());
             item.SubItems.Add(podcast.Category);
@@ -47,9 +47,9 @@ namespace PodcastPlayer
             if (index.Count > 0)
             {
                 Podcast podcast = podcastController.Podcasts[index[0]]; //samlingen index innehåller bara ett element som har index 0
-                foreach (var item in podcastController.EpisodesList(podcast))
+                foreach (Episode episode in podcast.Episodes)
                 {
-                    lstEpisode.Items.Add(item.EpisodeName);
+                    lstEpisode.Items.Add(episode.EpisodeName);
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace PodcastPlayer
             {
                 foreach (var podcast in list)
                 {
-                    ListViewItem item = new ListViewItem(podcastController.NumberOfEpisodes(podIndex).ToString());
+                    ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
                     item.SubItems.Add(podcast.PodName);
                     item.SubItems.Add(podcast.Frequency.ToString());
                     item.SubItems.Add(podcast.Category);
