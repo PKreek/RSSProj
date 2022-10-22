@@ -106,13 +106,19 @@ namespace PodcastPlayer
 
         private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection index = lstEpisode.SelectedIndices;
-            ListView.SelectedIndexCollection index2 = lstPodcasts.SelectedIndices;
+            ListView.SelectedIndexCollection indexEpisode = lstEpisode.SelectedIndices;
+            ListView.SelectedIndexCollection indexPodcast = lstPodcasts.SelectedIndices;
 
-            if (index.Count > 0)
+            if (indexEpisode.Count > 0)
             {
-                    lblEpisode.Text = ("Podcast #" + index2[0] + " Avsnitt " + index[0]);
+                lblDescription.Text = podcastController.Podcasts[indexPodcast[0]].Episodes[indexEpisode[0]].EpisodeDescription;
             }
+
+
+            //if (index.Count > 0)
+            //{
+            //        lblEpisode.Text = ("Podcast #" + index2[0] + " Avsnitt " + index[0]);
+            //}
 
         }
 
