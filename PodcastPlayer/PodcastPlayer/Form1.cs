@@ -29,16 +29,31 @@ namespace PodcastPlayer
         //}
         private void btnNewPod_Click(object sender, EventArgs e)
         {
-            string catName = cbxCategory.SelectedItem.ToString();
-            Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
+
+            if(cbxCategory.SelectedIndex != -1)
+            {
+                try
+                {
+                    string catName = cbxCategory.SelectedItem.ToString();
+                    Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
+                }
+                catch (UriFormatException)
+                {
+                    MessageBox.Show("Felaktigt format för URL");
+                }
+                catch (HttpRequestException)
+                {
+                    MessageBox.Show("Podcasten hittades inte. Kontrollera din URL");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Du måste välja en kategori");
+            }
+            
 
             readPodcast();
-            //ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
-            //item.SubItems.Add(podcast.PodName);
-            //item.SubItems.Add(podcast.Frequency.ToString());
-            //item.SubItems.Add(podcast.Category);
 
-            //lstPodcasts.Items.Add(item);
            
         }
 
