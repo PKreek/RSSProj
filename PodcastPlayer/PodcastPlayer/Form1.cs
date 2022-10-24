@@ -161,7 +161,7 @@ namespace PodcastPlayer
 
                 for (int i = 0; i < categoryController.categories.Count(); i++)
                 {
-                    if (category.CatName.Equals(categoryController.categories[i].CatName))
+                    if (category==categoryController.categories[i])
                     {
                         categoryController.DeleteCategory(i);
                         lstCategory.Clear();
@@ -184,7 +184,7 @@ namespace PodcastPlayer
                
                 for (int i = 0; i < podcastController.Podcasts.Count(); i++)
                 {
-                    if (podcast.PodName.Equals(podcastController.Podcasts[i].PodName))
+                    if (podcast==podcastController.Podcasts[i])
                     {
                         podcastController.DeletePodcast(i);
                         lstPodcasts.Items.Clear();
