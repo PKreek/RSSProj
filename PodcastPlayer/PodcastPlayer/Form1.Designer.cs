@@ -61,7 +61,7 @@
             this.lblCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCategories.Location = new System.Drawing.Point(1073, 27);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(78, 15);
+            this.lblCategories.Size = new System.Drawing.Size(143, 29);
             this.lblCategories.TabIndex = 0;
             this.lblCategories.Text = "Kategorier:";
             // 
@@ -71,7 +71,7 @@
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUrl.Location = new System.Drawing.Point(27, 308);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(39, 15);
+            this.lblUrl.Size = new System.Drawing.Size(70, 29);
             this.lblUrl.TabIndex = 1;
             this.lblUrl.Text = "URL:";
             // 
@@ -81,7 +81,7 @@
             this.lblUpdateFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateFreq.Location = new System.Drawing.Point(471, 308);
             this.lblUpdateFreq.Name = "lblUpdateFreq";
-            this.lblUpdateFreq.Size = new System.Drawing.Size(150, 15);
+            this.lblUpdateFreq.Size = new System.Drawing.Size(275, 29);
             this.lblUpdateFreq.TabIndex = 2;
             this.lblUpdateFreq.Text = "Uppdateringsfrekvens:";
             // 
@@ -91,7 +91,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCategory.Location = new System.Drawing.Point(770, 308);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(65, 15);
+            this.lblCategory.Size = new System.Drawing.Size(119, 29);
             this.lblCategory.TabIndex = 3;
             this.lblCategory.Text = "Kategori:";
             // 
@@ -102,7 +102,7 @@
             this.cbxUpdateFreq.FormattingEnabled = true;
             this.cbxUpdateFreq.Location = new System.Drawing.Point(471, 352);
             this.cbxUpdateFreq.Name = "cbxUpdateFreq";
-            this.cbxUpdateFreq.Size = new System.Drawing.Size(275, 28);
+            this.cbxUpdateFreq.Size = new System.Drawing.Size(275, 45);
             this.cbxUpdateFreq.TabIndex = 4;
             this.cbxUpdateFreq.Text = "Var 10:e minut";
             // 
@@ -113,7 +113,7 @@
             this.cbxCategory.FormattingEnabled = true;
             this.cbxCategory.Location = new System.Drawing.Point(770, 351);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(242, 28);
+            this.cbxCategory.Size = new System.Drawing.Size(242, 45);
             this.cbxCategory.TabIndex = 5;
             this.cbxCategory.Text = "Välj kategori:";
             // 
@@ -123,7 +123,7 @@
             this.txtUrl.ForeColor = System.Drawing.Color.Black;
             this.txtUrl.Location = new System.Drawing.Point(27, 352);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(420, 26);
+            this.txtUrl.Size = new System.Drawing.Size(420, 44);
             this.txtUrl.TabIndex = 6;
             this.txtUrl.Text = "http://";
             this.txtUrl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUrl_MouseClick);
@@ -191,6 +191,7 @@
             this.btnDeleteCategory.TabIndex = 12;
             this.btnDeleteCategory.Text = "Ta bort...";
             this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // lstPodcasts
             // 
@@ -240,7 +241,7 @@
             // 
             this.txtCategory.Location = new System.Drawing.Point(1073, 290);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(484, 32);
+            this.txtCategory.Size = new System.Drawing.Size(484, 56);
             this.txtCategory.TabIndex = 15;
             // 
             // lblDescription
@@ -249,7 +250,7 @@
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDescription.Location = new System.Drawing.Point(1073, 538);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(35, 13);
+            this.lblDescription.Size = new System.Drawing.Size(70, 26);
             this.lblDescription.TabIndex = 16;
             this.lblDescription.Text = "label1";
             // 
@@ -258,7 +259,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Location = new System.Drawing.Point(1073, 476);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(70, 26);
+            this.lblTitle.Size = new System.Drawing.Size(138, 51);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "label1";
             // 
@@ -285,13 +286,13 @@
             this.lblEpisode.AutoSize = true;
             this.lblEpisode.Location = new System.Drawing.Point(27, 484);
             this.lblEpisode.Name = "lblEpisode";
-            this.lblEpisode.Size = new System.Drawing.Size(70, 26);
+            this.lblEpisode.Size = new System.Drawing.Size(138, 51);
             this.lblEpisode.TabIndex = 19;
             this.lblEpisode.Text = "label1";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(25F, 51F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1570, 870);
             this.Controls.Add(this.lblEpisode);
