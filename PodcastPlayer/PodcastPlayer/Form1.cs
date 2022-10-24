@@ -150,5 +150,26 @@ namespace PodcastPlayer
         {
             txtUrl.Clear();
         }
+
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedIndexCollection indexCat = lstCategory.SelectedIndices;
+
+            if (indexCat.Count > 0)
+            {
+                Category category = categoryController.categories[indexCat[0]];
+
+                for (int i = 0; i < categoryController.categories.Count(); i++)
+                {
+                    if (category.CatName.Equals(categoryController.categories[i].CatName))
+                    {
+                        categoryController.DeleteCategory(i);
+                        lstCategory.Clear();
+                        lasCategory();
+                    }
+                }
+
+            }
+        }
     }
 }

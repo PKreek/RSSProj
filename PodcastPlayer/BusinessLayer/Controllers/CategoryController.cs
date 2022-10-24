@@ -31,6 +31,11 @@ namespace BusinessLayer.Controllers
             return categories;
    
         }
+
+        public void DeleteCategory(int index)
+        {
+            categoryRepository.Delete(index);      
+        }
         //public string ReturnCat(string namn)
         //{
         //    string obj = "";
