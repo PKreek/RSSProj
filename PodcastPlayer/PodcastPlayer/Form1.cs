@@ -171,5 +171,27 @@ namespace PodcastPlayer
 
             }
         }
+
+        private void btnDeletePod_Click(object sender, EventArgs e)
+        {
+            ListView.SelectedIndexCollection indexPod = lstPodcasts.SelectedIndices;
+
+            if (indexPod.Count > 0)
+            {
+                Podcast podcast = podcastController.Podcasts[indexPod[0]];  
+               
+                for (int i = 0; i < podcastController.Podcasts.Count(); i++)
+                {
+                    if (podcast.PodName.Equals(podcastController.Podcasts[i].PodName))
+                    {
+                        podcastController.DeletePodcast(i);
+                        lstPodcasts.Items.Clear();
+                        lstEpisode.Items.Clear();
+                        readPodcast();
+                    }
+                }
+
+            }
+        }
     }
 }

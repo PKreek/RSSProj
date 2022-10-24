@@ -35,6 +35,10 @@ namespace BusinessLayer.Controllers
             return podcast;
         }
 
+        public void DeletePodcast(int index)
+        {
+            podcastRepository.Delete(index);
+        }
         public void SavePodcast()
         {
             podcastRepository.Insert(Podcasts);

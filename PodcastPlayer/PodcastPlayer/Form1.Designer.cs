@@ -159,6 +159,7 @@
             this.btnDeletePod.TabIndex = 9;
             this.btnDeletePod.Text = "Ta bort...";
             this.btnDeletePod.UseVisualStyleBackColor = true;
+            this.btnDeletePod.Click += new System.EventHandler(this.btnDeletePod_Click);
             // 
             // btnNewCategory
             // 
