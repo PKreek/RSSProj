@@ -50,9 +50,10 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lstEpisode = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.Avsnitt = new System.Windows.Forms.ColumnHeader();
             this.lblEpisode = new System.Windows.Forms.Label();
             this.txtChange = new System.Windows.Forms.TextBox();
+            this.lblEnterCategory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCategories
@@ -153,7 +154,7 @@
             // btnNewCategory
             // 
             this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewCategory.Location = new System.Drawing.Point(1116, 369);
+            this.btnNewCategory.Location = new System.Drawing.Point(1116, 402);
             this.btnNewCategory.Name = "btnNewCategory";
             this.btnNewCategory.Size = new System.Drawing.Size(156, 56);
             this.btnNewCategory.TabIndex = 10;
@@ -164,7 +165,7 @@
             // btnSaveCategory
             // 
             this.btnSaveCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveCategory.Location = new System.Drawing.Point(1292, 369);
+            this.btnSaveCategory.Location = new System.Drawing.Point(1293, 402);
             this.btnSaveCategory.Name = "btnSaveCategory";
             this.btnSaveCategory.Size = new System.Drawing.Size(156, 56);
             this.btnSaveCategory.TabIndex = 11;
@@ -175,7 +176,7 @@
             // btnDeleteCategory
             // 
             this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteCategory.Location = new System.Drawing.Point(1464, 369);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(1465, 402);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(156, 56);
             this.btnDeleteCategory.TabIndex = 12;
@@ -229,7 +230,7 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(1116, 290);
+            this.txtCategory.Location = new System.Drawing.Point(1118, 327);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(503, 56);
             this.txtCategory.TabIndex = 15;
@@ -237,26 +238,26 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(1116, 538);
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDescription.Location = new System.Drawing.Point(1106, 535);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(70, 26);
+            this.lblDescription.Size = new System.Drawing.Size(145, 29);
             this.lblDescription.TabIndex = 16;
-            this.lblDescription.Text = "label1";
+            this.lblDescription.Text = "Beskrivning";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(1116, 476);
+            this.lblTitle.Location = new System.Drawing.Point(1106, 484);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(144, 51);
+            this.lblTitle.Size = new System.Drawing.Size(160, 51);
             this.lblTitle.TabIndex = 17;
-            this.lblTitle.Text = "label1";
+            this.lblTitle.Text = "Avsnitt";
             // 
             // lstEpisode
             // 
             this.lstEpisode.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.Avsnitt});
             this.lstEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstEpisode.FullRowSelect = true;
             this.lstEpisode.Location = new System.Drawing.Point(28, 538);
@@ -267,32 +268,45 @@
             this.lstEpisode.View = System.Windows.Forms.View.Details;
             this.lstEpisode.SelectedIndexChanged += new System.EventHandler(this.lstEpisode_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // Avsnitt
             // 
-            this.columnHeader1.Width = 1000;
+            this.Avsnitt.Text = "Avsnitt";
+            this.Avsnitt.Width = 1000;
             // 
             // lblEpisode
             // 
             this.lblEpisode.AutoSize = true;
             this.lblEpisode.Location = new System.Drawing.Point(28, 484);
             this.lblEpisode.Name = "lblEpisode";
-            this.lblEpisode.Size = new System.Drawing.Size(144, 51);
+            this.lblEpisode.Size = new System.Drawing.Size(160, 51);
             this.lblEpisode.TabIndex = 19;
-            this.lblEpisode.Text = "label1";
+            this.lblEpisode.Text = "Avsnitt";
             // 
             // txtChange
             // 
-            this.txtChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtChange.Location = new System.Drawing.Point(471, 351);
+            this.txtChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtChange.ForeColor = System.Drawing.Color.Black;
+            this.txtChange.Location = new System.Drawing.Point(471, 352);
             this.txtChange.Name = "txtChange";
             this.txtChange.Size = new System.Drawing.Size(322, 44);
             this.txtChange.TabIndex = 20;
+            // 
+            // lblEnterCategory
+            // 
+            this.lblEnterCategory.AutoSize = true;
+            this.lblEnterCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEnterCategory.Location = new System.Drawing.Point(1116, 286);
+            this.lblEnterCategory.Name = "lblEnterCategory";
+            this.lblEnterCategory.Size = new System.Drawing.Size(301, 29);
+            this.lblEnterCategory.TabIndex = 21;
+            this.lblEnterCategory.Text = "Lägg till/ändra kategori:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(26F, 51F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1633, 870);
+            this.Controls.Add(this.lblEnterCategory);
             this.Controls.Add(this.txtChange);
             this.Controls.Add(this.lblEpisode);
             this.Controls.Add(this.lstEpisode);
@@ -347,7 +361,8 @@
         private Label lblTitle;
         private ListView lstEpisode;
         private Label lblEpisode;
-        private ColumnHeader columnHeader1;
+        private ColumnHeader Avsnitt;
         private TextBox txtChange;
+        private Label lblEnterCategory;
     }
 }

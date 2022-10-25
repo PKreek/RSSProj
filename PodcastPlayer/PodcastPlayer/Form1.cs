@@ -89,6 +89,7 @@ namespace PodcastPlayer
                 categoryController.SaveCategory();
                 cbxCategory.Items.Clear();
                 fillCategoryCbx();
+                txtCategory.Clear();
             }
         }
         public void lasCategory()
@@ -143,6 +144,8 @@ namespace PodcastPlayer
                 podcast.Category = cbxCategory.SelectedItem.ToString();
                 readPodcast();
                 podcastController.SavePodcast();
+                txtUrl.Clear();
+                txtChange.Clear();
             }
         }
 
@@ -175,6 +178,7 @@ namespace PodcastPlayer
                 cbxCategory.Items.Clear();
                 fillCategoryCbx();
                 categoryController.SaveCategory();
+                txtCategory.Clear();
             }
         }
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
