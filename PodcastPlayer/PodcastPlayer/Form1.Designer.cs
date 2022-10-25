@@ -30,9 +30,8 @@
         {
             this.lblCategories = new System.Windows.Forms.Label();
             this.lblUrl = new System.Windows.Forms.Label();
-            this.lblUpdateFreq = new System.Windows.Forms.Label();
+            this.lblUpdateName = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
-            this.cbxUpdateFreq = new System.Windows.Forms.ComboBox();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.btnNewPod = new System.Windows.Forms.Button();
@@ -53,13 +52,14 @@
             this.lstEpisode = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.lblEpisode = new System.Windows.Forms.Label();
+            this.txtChange = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblCategories
             // 
             this.lblCategories.AutoSize = true;
             this.lblCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCategories.Location = new System.Drawing.Point(1073, 27);
+            this.lblCategories.Location = new System.Drawing.Point(1116, 27);
             this.lblCategories.Name = "lblCategories";
             this.lblCategories.Size = new System.Drawing.Size(143, 29);
             this.lblCategories.TabIndex = 0;
@@ -69,51 +69,40 @@
             // 
             this.lblUrl.AutoSize = true;
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUrl.Location = new System.Drawing.Point(27, 308);
+            this.lblUrl.Location = new System.Drawing.Point(28, 308);
             this.lblUrl.Name = "lblUrl";
             this.lblUrl.Size = new System.Drawing.Size(70, 29);
             this.lblUrl.TabIndex = 1;
             this.lblUrl.Text = "URL:";
             // 
-            // lblUpdateFreq
+            // lblUpdateName
             // 
-            this.lblUpdateFreq.AutoSize = true;
-            this.lblUpdateFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUpdateFreq.Location = new System.Drawing.Point(471, 308);
-            this.lblUpdateFreq.Name = "lblUpdateFreq";
-            this.lblUpdateFreq.Size = new System.Drawing.Size(275, 29);
-            this.lblUpdateFreq.TabIndex = 2;
-            this.lblUpdateFreq.Text = "Uppdateringsfrekvens:";
+            this.lblUpdateName.AutoSize = true;
+            this.lblUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblUpdateName.Location = new System.Drawing.Point(472, 308);
+            this.lblUpdateName.Name = "lblUpdateName";
+            this.lblUpdateName.Size = new System.Drawing.Size(158, 29);
+            this.lblUpdateName.TabIndex = 2;
+            this.lblUpdateName.Text = "Ändra namn:";
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCategory.Location = new System.Drawing.Point(770, 308);
+            this.lblCategory.Location = new System.Drawing.Point(801, 308);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(119, 29);
             this.lblCategory.TabIndex = 3;
             this.lblCategory.Text = "Kategori:";
-            // 
-            // cbxUpdateFreq
-            // 
-            this.cbxUpdateFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxUpdateFreq.ForeColor = System.Drawing.Color.Black;
-            this.cbxUpdateFreq.FormattingEnabled = true;
-            this.cbxUpdateFreq.Location = new System.Drawing.Point(471, 352);
-            this.cbxUpdateFreq.Name = "cbxUpdateFreq";
-            this.cbxUpdateFreq.Size = new System.Drawing.Size(275, 45);
-            this.cbxUpdateFreq.TabIndex = 4;
-            this.cbxUpdateFreq.Text = "Var 10:e minut";
             // 
             // cbxCategory
             // 
             this.cbxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxCategory.ForeColor = System.Drawing.Color.Black;
             this.cbxCategory.FormattingEnabled = true;
-            this.cbxCategory.Location = new System.Drawing.Point(770, 351);
+            this.cbxCategory.Location = new System.Drawing.Point(801, 351);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(242, 45);
+            this.cbxCategory.Size = new System.Drawing.Size(252, 45);
             this.cbxCategory.TabIndex = 5;
             this.cbxCategory.Text = "Välj kategori:";
             // 
@@ -121,9 +110,9 @@
             // 
             this.txtUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUrl.ForeColor = System.Drawing.Color.Black;
-            this.txtUrl.Location = new System.Drawing.Point(27, 352);
+            this.txtUrl.Location = new System.Drawing.Point(28, 352);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(420, 44);
+            this.txtUrl.Size = new System.Drawing.Size(437, 44);
             this.txtUrl.TabIndex = 6;
             this.txtUrl.Text = "http://";
             this.txtUrl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUrl_MouseClick);
@@ -131,9 +120,9 @@
             // btnNewPod
             // 
             this.btnNewPod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewPod.Location = new System.Drawing.Point(454, 431);
+            this.btnNewPod.Location = new System.Drawing.Point(472, 431);
             this.btnNewPod.Name = "btnNewPod";
-            this.btnNewPod.Size = new System.Drawing.Size(180, 54);
+            this.btnNewPod.Size = new System.Drawing.Size(187, 54);
             this.btnNewPod.TabIndex = 7;
             this.btnNewPod.Text = "Ny...";
             this.btnNewPod.UseVisualStyleBackColor = true;
@@ -142,9 +131,9 @@
             // btnSavePod
             // 
             this.btnSavePod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSavePod.Location = new System.Drawing.Point(652, 431);
+            this.btnSavePod.Location = new System.Drawing.Point(678, 431);
             this.btnSavePod.Name = "btnSavePod";
-            this.btnSavePod.Size = new System.Drawing.Size(164, 54);
+            this.btnSavePod.Size = new System.Drawing.Size(171, 54);
             this.btnSavePod.TabIndex = 8;
             this.btnSavePod.Text = "Spara";
             this.btnSavePod.UseVisualStyleBackColor = true;
@@ -153,9 +142,9 @@
             // btnDeletePod
             // 
             this.btnDeletePod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeletePod.Location = new System.Drawing.Point(837, 431);
+            this.btnDeletePod.Location = new System.Drawing.Point(870, 431);
             this.btnDeletePod.Name = "btnDeletePod";
-            this.btnDeletePod.Size = new System.Drawing.Size(175, 54);
+            this.btnDeletePod.Size = new System.Drawing.Size(182, 54);
             this.btnDeletePod.TabIndex = 9;
             this.btnDeletePod.Text = "Ta bort...";
             this.btnDeletePod.UseVisualStyleBackColor = true;
@@ -164,9 +153,9 @@
             // btnNewCategory
             // 
             this.btnNewCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewCategory.Location = new System.Drawing.Point(1073, 369);
+            this.btnNewCategory.Location = new System.Drawing.Point(1116, 369);
             this.btnNewCategory.Name = "btnNewCategory";
-            this.btnNewCategory.Size = new System.Drawing.Size(150, 56);
+            this.btnNewCategory.Size = new System.Drawing.Size(156, 56);
             this.btnNewCategory.TabIndex = 10;
             this.btnNewCategory.Text = "Ny...";
             this.btnNewCategory.UseVisualStyleBackColor = true;
@@ -175,9 +164,9 @@
             // btnSaveCategory
             // 
             this.btnSaveCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveCategory.Location = new System.Drawing.Point(1242, 369);
+            this.btnSaveCategory.Location = new System.Drawing.Point(1292, 369);
             this.btnSaveCategory.Name = "btnSaveCategory";
-            this.btnSaveCategory.Size = new System.Drawing.Size(150, 56);
+            this.btnSaveCategory.Size = new System.Drawing.Size(156, 56);
             this.btnSaveCategory.TabIndex = 11;
             this.btnSaveCategory.Text = "Spara";
             this.btnSaveCategory.UseVisualStyleBackColor = true;
@@ -186,9 +175,9 @@
             // btnDeleteCategory
             // 
             this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeleteCategory.Location = new System.Drawing.Point(1408, 369);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(1464, 369);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(150, 56);
+            this.btnDeleteCategory.Size = new System.Drawing.Size(156, 56);
             this.btnDeleteCategory.TabIndex = 12;
             this.btnDeleteCategory.Text = "Ta bort...";
             this.btnDeleteCategory.UseVisualStyleBackColor = true;
@@ -202,9 +191,9 @@
             this.colFrequency,
             this.colCategory});
             this.lstPodcasts.FullRowSelect = true;
-            this.lstPodcasts.Location = new System.Drawing.Point(27, 27);
+            this.lstPodcasts.Location = new System.Drawing.Point(28, 27);
             this.lstPodcasts.Name = "lstPodcasts";
-            this.lstPodcasts.Size = new System.Drawing.Size(985, 256);
+            this.lstPodcasts.Size = new System.Drawing.Size(1024, 256);
             this.lstPodcasts.TabIndex = 13;
             this.lstPodcasts.UseCompatibleStateImageBehavior = false;
             this.lstPodcasts.View = System.Windows.Forms.View.Details;
@@ -232,24 +221,24 @@
             // 
             // lstCategory
             // 
-            this.lstCategory.Location = new System.Drawing.Point(1073, 72);
+            this.lstCategory.Location = new System.Drawing.Point(1116, 72);
             this.lstCategory.Name = "lstCategory";
-            this.lstCategory.Size = new System.Drawing.Size(485, 211);
+            this.lstCategory.Size = new System.Drawing.Size(504, 211);
             this.lstCategory.TabIndex = 14;
             this.lstCategory.UseCompatibleStateImageBehavior = false;
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(1073, 290);
+            this.txtCategory.Location = new System.Drawing.Point(1116, 290);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(484, 56);
+            this.txtCategory.Size = new System.Drawing.Size(503, 56);
             this.txtCategory.TabIndex = 15;
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDescription.Location = new System.Drawing.Point(1073, 538);
+            this.lblDescription.Location = new System.Drawing.Point(1116, 538);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(70, 26);
             this.lblDescription.TabIndex = 16;
@@ -258,9 +247,9 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(1073, 476);
+            this.lblTitle.Location = new System.Drawing.Point(1116, 476);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(138, 51);
+            this.lblTitle.Size = new System.Drawing.Size(144, 51);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "label1";
             // 
@@ -270,9 +259,9 @@
             this.columnHeader1});
             this.lstEpisode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstEpisode.FullRowSelect = true;
-            this.lstEpisode.Location = new System.Drawing.Point(27, 538);
+            this.lstEpisode.Location = new System.Drawing.Point(28, 538);
             this.lstEpisode.Name = "lstEpisode";
-            this.lstEpisode.Size = new System.Drawing.Size(985, 314);
+            this.lstEpisode.Size = new System.Drawing.Size(1024, 314);
             this.lstEpisode.TabIndex = 18;
             this.lstEpisode.UseCompatibleStateImageBehavior = false;
             this.lstEpisode.View = System.Windows.Forms.View.Details;
@@ -285,17 +274,26 @@
             // lblEpisode
             // 
             this.lblEpisode.AutoSize = true;
-            this.lblEpisode.Location = new System.Drawing.Point(27, 484);
+            this.lblEpisode.Location = new System.Drawing.Point(28, 484);
             this.lblEpisode.Name = "lblEpisode";
-            this.lblEpisode.Size = new System.Drawing.Size(138, 51);
+            this.lblEpisode.Size = new System.Drawing.Size(144, 51);
             this.lblEpisode.TabIndex = 19;
             this.lblEpisode.Text = "label1";
             // 
+            // txtChange
+            // 
+            this.txtChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtChange.Location = new System.Drawing.Point(471, 351);
+            this.txtChange.Name = "txtChange";
+            this.txtChange.Size = new System.Drawing.Size(322, 44);
+            this.txtChange.TabIndex = 20;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(25F, 51F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(26F, 51F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1570, 870);
+            this.ClientSize = new System.Drawing.Size(1633, 870);
+            this.Controls.Add(this.txtChange);
             this.Controls.Add(this.lblEpisode);
             this.Controls.Add(this.lstEpisode);
             this.Controls.Add(this.lblTitle);
@@ -311,12 +309,11 @@
             this.Controls.Add(this.btnNewPod);
             this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.cbxCategory);
-            this.Controls.Add(this.cbxUpdateFreq);
             this.Controls.Add(this.lblCategory);
-            this.Controls.Add(this.lblUpdateFreq);
+            this.Controls.Add(this.lblUpdateName);
             this.Controls.Add(this.lblUrl);
             this.Controls.Add(this.lblCategories);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
             this.Text = "Podcasts";
@@ -329,9 +326,8 @@
 
         private Label lblCategories;
         private Label lblUrl;
-        private Label lblUpdateFreq;
+        private Label lblUpdateName;
         private Label lblCategory;
-        private ComboBox cbxUpdateFreq;
         private ComboBox cbxCategory;
         private TextBox txtUrl;
         private Button btnNewPod;
@@ -352,5 +348,6 @@
         private ListView lstEpisode;
         private Label lblEpisode;
         private ColumnHeader columnHeader1;
+        private TextBox txtChange;
     }
 }

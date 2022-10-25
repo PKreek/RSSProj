@@ -130,7 +130,15 @@ namespace PodcastPlayer
 
         private void btnSavePod_Click(object sender, EventArgs e)
         {
-            
+            ListView.SelectedIndexCollection indexPodcast = lstPodcasts.SelectedIndices;
+
+            if(indexPodcast.Count > 0)
+            {
+                Podcast podcast = podcastController.Podcasts[indexPodcast[0]];
+                podcast.PodName = txtChange.Text;
+                podcast.Category = cbxCategory.SelectedItem.ToString();
+                readPodcast();
+            }
         }
 
         private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)
