@@ -22,11 +22,7 @@ namespace PodcastPlayer
             lblDescription.AutoSize = true;
             lblDescription.MaximumSize = new Size(400, 0);
         }
-        //Podcast podcast = podcastController.Podcasts[];
-        //foreach (var item in podcast.Episodes)
-        //{
-        //    lstEpisode.Items.Add(item.EpisodeName);
-        //}
+
         private void btnNewPod_Click(object sender, EventArgs e)
         {
 
@@ -52,10 +48,7 @@ namespace PodcastPlayer
                 MessageBox.Show("Du måste välja en kategori");
             }
             
-
             readPodcast();
-
-           
         }
 
         private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,7 +96,6 @@ namespace PodcastPlayer
                     lstCategory.Items.Add(item.CatName);
                 }
             }
-
         }
 
         public void readPodcast()
@@ -122,8 +114,8 @@ namespace PodcastPlayer
                     lstPodcasts.Items.Add(item);
                 }
             }
-
         }
+
         public void fillCategoryCbx()
         {
             List<Category> list = categoryController.categories;
@@ -158,13 +150,6 @@ namespace PodcastPlayer
             {
                 lblDescription.Text = podcastController.Podcasts[indexPodcast].Episodes[indexEpisode].EpisodeDescription;
             }
-
-
-            //if (index.Count > 0)
-            //{
-            //        lblEpisode.Text = ("Podcast #" + index2[0] + " Avsnitt " + index[0]);
-            //}
-
         }
 
         private void btnSaveCategory_Click(object sender, EventArgs e)
@@ -175,12 +160,10 @@ namespace PodcastPlayer
                 Category category = categoryController.categories[indexCat];
                 for (int i = 0; i < podcastController.Podcasts.Count(); i++) 
                 { 
-                if(category.CatName == podcastController.Podcasts[i].Category)
+                    if(category.CatName == podcastController.Podcasts[i].Category)
                     {
-                        
                         podcastController.Podcasts[i].Category = txtCategory.Text;
                     }
-                
                 }
                 category.CatName = txtCategory.Text;
                 lasCategory();
@@ -192,6 +175,7 @@ namespace PodcastPlayer
                 readPodcast();
             }
         }
+
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
         {
             txtUrl.Clear();
@@ -204,6 +188,7 @@ namespace PodcastPlayer
   
             return index; 
         }
+
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             int indexCat = getSelectedIndexFromListView(lstCategory);
@@ -260,7 +245,6 @@ namespace PodcastPlayer
                         readPodcast();
                     }
                 }
-
             }
         }
     }
