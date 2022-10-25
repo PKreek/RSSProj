@@ -121,7 +121,7 @@ namespace PodcastPlayer
         }
         public void fillCategoryCbx()
         {
-            List<Category> list = categoryController.readCategory();
+            List<Category> list = categoryController.categories;
             foreach (var item in list)
             {
                 cbxCategory.Items.Add(item.CatName);
@@ -138,6 +138,7 @@ namespace PodcastPlayer
                 podcast.PodName = txtChange.Text;
                 podcast.Category = cbxCategory.SelectedItem.ToString();
                 readPodcast();
+                podcastController.SavePodcast();
             }
         }
 
@@ -161,7 +162,16 @@ namespace PodcastPlayer
 
         private void btnSaveCategory_Click(object sender, EventArgs e)
         {
-            
+            ListView.SelectedIndexCollection indexCat = lstCategory.SelectedIndices;
+            if(indexCat.Count > 0)
+            {
+                Category category = categoryController.categories[indexCat[0]];
+                category.CatName = txtCategory.Text;
+                lasCategory();
+                cbxCategory.Items.Clear();
+                fillCategoryCbx();
+                categoryController.SaveCategory();
+            }
         }
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
         {
