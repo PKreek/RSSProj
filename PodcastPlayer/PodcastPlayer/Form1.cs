@@ -74,10 +74,18 @@ namespace PodcastPlayer
 
         private void btnNewCategory_Click(object sender, EventArgs e)
         {
-            Category category = categoryController.AddCategory(txtCategory.Text);
-            lstCategory.Items.Add(category.CatName);
-            
-            
+
+            if (txtCategory.Text == "h")
+            {
+                MessageBox.Show("fel");
+
+                throw new EmptyException();
+            }
+            else
+            {
+                Category category = categoryController.AddCategory(txtCategory.Text);
+                lstCategory.Items.Add(category.CatName);
+            }
         }
         public void lasCategory()
         {
