@@ -186,6 +186,7 @@ namespace PodcastPlayer
                 lasCategory();
                 cbxCategory.Items.Clear();
                 fillCategoryCbx();
+                podcastController.SavePodcast();
                 categoryController.SaveCategory();
                 txtCategory.Clear();
                 readPodcast();
