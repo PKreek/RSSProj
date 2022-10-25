@@ -36,7 +36,6 @@ namespace PodcastPlayer
                 {
                     string catName = cbxCategory.SelectedItem.ToString();
                     Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
-                    podcastController.SavePodcast();
                 }
                 catch (UriFormatException)
                 {
@@ -75,7 +74,6 @@ namespace PodcastPlayer
 
         private void btnNewCategory_Click(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
 
             if (txtCategory.Text == "h")
             {
@@ -95,16 +93,6 @@ namespace PodcastPlayer
             
             
         
-=======
-            Category category = categoryController.AddCategory(txtCategory.Text);
-            lstCategory.Items.Add(category.CatName);
-            categoryController.SaveCategory();
-            cbxCategory.Items.Clear();
-            fillCategoryCbx();
-
-
-        }
->>>>>>> Stashed changes
         public void lasCategory()
         {
             List<Category> list = categoryController.readCategory();
@@ -146,7 +134,7 @@ namespace PodcastPlayer
 
         private void btnSavePod_Click(object sender, EventArgs e)
         {
-            
+            podcastController.SavePodcast();
             
         }
 
@@ -170,7 +158,9 @@ namespace PodcastPlayer
 
         private void btnSaveCategory_Click(object sender, EventArgs e)
         {
-            
+            categoryController.SaveCategory();
+            cbxCategory.Items.Clear();
+            fillCategoryCbx();
         }
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
         {

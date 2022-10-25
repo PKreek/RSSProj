@@ -131,7 +131,7 @@
             // btnNewPod
             // 
             this.btnNewPod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnNewPod.Location = new System.Drawing.Point(450, 431);
+            this.btnNewPod.Location = new System.Drawing.Point(454, 431);
             this.btnNewPod.Name = "btnNewPod";
             this.btnNewPod.Size = new System.Drawing.Size(180, 54);
             this.btnNewPod.TabIndex = 7;
@@ -146,7 +146,7 @@
             this.btnSavePod.Name = "btnSavePod";
             this.btnSavePod.Size = new System.Drawing.Size(164, 54);
             this.btnSavePod.TabIndex = 8;
-            this.btnSavePod.Text = "Ändra";
+            this.btnSavePod.Text = "Spara";
             this.btnSavePod.UseVisualStyleBackColor = true;
             this.btnSavePod.Click += new System.EventHandler(this.btnSavePod_Click);
             // 
@@ -179,7 +179,7 @@
             this.btnSaveCategory.Name = "btnSaveCategory";
             this.btnSaveCategory.Size = new System.Drawing.Size(150, 56);
             this.btnSaveCategory.TabIndex = 11;
-            this.btnSaveCategory.Text = "Ändra";
+            this.btnSaveCategory.Text = "Spara";
             this.btnSaveCategory.UseVisualStyleBackColor = true;
             this.btnSaveCategory.Click += new System.EventHandler(this.btnSaveCategory_Click);
             // 
