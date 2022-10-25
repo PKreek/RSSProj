@@ -60,12 +60,12 @@ namespace PodcastPlayer
 
         private void lstPodcasts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection index = lstPodcasts.SelectedIndices;
+            int index = getSelectedIndexFromListView(lstPodcasts);
             lstEpisode.Items.Clear();
 
-            if (index.Count > 0)
+            if (index > -1)
             {
-                Podcast podcast = podcastController.Podcasts[index[0]]; //samlingen index innehåller bara ett element som har index 0
+                Podcast podcast = podcastController.Podcasts[index]; 
                 foreach (Episode episode in podcast.Episodes)
                 {
                     lstEpisode.Items.Add(episode.EpisodeName);
@@ -135,11 +135,11 @@ namespace PodcastPlayer
 
         private void btnSavePod_Click(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection indexPodcast = lstPodcasts.SelectedIndices;
+            int index = getSelectedIndexFromListView(lstPodcasts);
 
-            if(indexPodcast.Count > 0)
+            if (index > -1)
             {
-                Podcast podcast = podcastController.Podcasts[indexPodcast[0]];
+                Podcast podcast = podcastController.Podcasts[index];
                 podcast.PodName = txtChange.Text;
                 podcast.Category = cbxCategory.SelectedItem.ToString();
                 readPodcast();
@@ -151,12 +151,12 @@ namespace PodcastPlayer
 
         private void lstEpisode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection indexEpisode = lstEpisode.SelectedIndices;
-            ListView.SelectedIndexCollection indexPodcast = lstPodcasts.SelectedIndices;
+            int indexEpisode = getSelectedIndexFromListView(lstEpisode);
+            int indexPodcast = getSelectedIndexFromListView(lstPodcasts);
 
-            if (indexEpisode.Count > 0)
+            if (indexEpisode > -1)
             {
-                lblDescription.Text = podcastController.Podcasts[indexPodcast[0]].Episodes[indexEpisode[0]].EpisodeDescription;
+                lblDescription.Text = podcastController.Podcasts[indexPodcast].Episodes[indexEpisode].EpisodeDescription;
             }
 
 
@@ -169,10 +169,10 @@ namespace PodcastPlayer
 
         private void btnSaveCategory_Click(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection indexCat = lstCategory.SelectedIndices;
-            if(indexCat.Count > 0)
+            int indexCat = getSelectedIndexFromListView(lstCategory);
+            if (indexCat > -1)
             {
-                Category category = categoryController.categories[indexCat[0]];
+                Category category = categoryController.categories[indexCat];
                 for (int i = 0; i < podcastController.Podcasts.Count(); i++) 
                 { 
                 if(category.CatName == podcastController.Podcasts[i].Category)
@@ -206,11 +206,11 @@ namespace PodcastPlayer
         }
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection indexCat = lstCategory.SelectedIndices;
+            int indexCat = getSelectedIndexFromListView(lstCategory);
 
-            if (indexCat.Count > 0)
+            if (indexCat > -1)
             {
-                Category category = categoryController.categories[indexCat[0]];
+                Category category = categoryController.categories[indexCat];
 
                 for (int i = 0; i < categoryController.categories.Count(); i++)
                 {
@@ -244,11 +244,11 @@ namespace PodcastPlayer
 
         private void btnDeletePod_Click(object sender, EventArgs e)
         {
-            ListView.SelectedIndexCollection indexPod = lstPodcasts.SelectedIndices;
+            int indexPod = getSelectedIndexFromListView(lstPodcasts);
 
-            if (indexPod.Count > 0)
+            if (indexPod > -1)
             {
-                Podcast podcast = podcastController.Podcasts[indexPod[0]];  
+                Podcast podcast = podcastController.Podcasts[indexPod];  
                
                 for (int i = 0; i < podcastController.Podcasts.Count(); i++)
                 {
