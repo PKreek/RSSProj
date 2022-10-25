@@ -13,6 +13,8 @@ namespace BusinessLayer.Controllers
         IRepository<Category> categoryRepository;
         public List<Category> categories;
 
+        Validering validering = new Validering();
+
         public CategoryController()
         {
             categoryRepository = new CategoryRepository();
@@ -29,7 +31,19 @@ namespace BusinessLayer.Controllers
             categories = categoryRepository.GetAll();
 
             return categories;
-   
+
+        }
+        public bool validationToLong(string text)
+        {
+            bool test = false;
+            test = validering.toLong(text);
+            return test;
+        }
+        public bool validationIsEmpty(string text)
+        {
+            bool test = false;
+            test = validering.isEmpty(text);
+            return test;
         }
 
         public void DeleteCategory(int index)
