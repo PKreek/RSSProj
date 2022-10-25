@@ -173,12 +173,22 @@ namespace PodcastPlayer
             if(indexCat.Count > 0)
             {
                 Category category = categoryController.categories[indexCat[0]];
+                for (int i = 0; i < podcastController.Podcasts.Count(); i++) 
+                { 
+                if(category.CatName == podcastController.Podcasts[i].Category)
+                    {
+                        
+                        podcastController.Podcasts[i].Category = txtCategory.Text;
+                    }
+                
+                }
                 category.CatName = txtCategory.Text;
                 lasCategory();
                 cbxCategory.Items.Clear();
                 fillCategoryCbx();
                 categoryController.SaveCategory();
                 txtCategory.Clear();
+                readPodcast();
             }
         }
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
