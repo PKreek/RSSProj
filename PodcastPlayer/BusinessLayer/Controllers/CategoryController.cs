@@ -18,6 +18,7 @@ namespace BusinessLayer.Controllers
         public CategoryController()
         {
             categoryRepository = new CategoryRepository();
+            readCategory();
         }
         public Category AddCategory(string catName)
         {
@@ -25,12 +26,10 @@ namespace BusinessLayer.Controllers
             categories.Add(category);
             return category;
         }
-        public List<Category> readCategory()
+        private void readCategory()
         {
             //CategoryRepository catRep = new CategoryRepository();
             categories = categoryRepository.GetAll();
-
-            return categories;
 
         }
         public bool validationToLong(string text)
