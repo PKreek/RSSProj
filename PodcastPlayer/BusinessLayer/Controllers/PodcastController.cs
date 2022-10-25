@@ -35,11 +35,6 @@ namespace BusinessLayer.Controllers
             return podcast;
         }
 
-        public void DeletePodcastByCategory(Category category)
-        {
-            Podcasts.RemoveAll(x => x.Category.Equals(category.CatName));
-        }
-
         public void DeletePodcast(int index)
         {
             podcastRepository.Delete(index);

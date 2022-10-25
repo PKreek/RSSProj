@@ -189,10 +189,9 @@ namespace PodcastPlayer
                 {
                     if (category==categoryController.categories[i])
                     {
-                        podcastController.DeletePodcastByCategory(category);
-                        //List<Podcast> podcastlista = podcastController.Podcasts;
+                        List<Podcast> podcastlista = podcastController.Podcasts;
 
-                        //podcastlista.RemoveAll(x => x.Category.Equals(category.CatName));
+                        podcastlista.RemoveAll(x => x.Category.Equals(category.CatName));
                         //for (int j = 0; j < podcastController.Podcasts.Count; j++)
                         //{
                         //    if (category.CatName == podcastController.Podcasts[j].Category)
@@ -206,9 +205,7 @@ namespace PodcastPlayer
                         cbxCategory.Items.Clear();
                         fillCategoryCbx();
                         readPodcast();
-                        lstEpisode.Items.Clear();
                         podcastController.SavePodcast();
-                        categoryController.SaveCategory();
                     }
                 }
 
