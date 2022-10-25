@@ -197,6 +197,13 @@ namespace PodcastPlayer
             txtUrl.Clear();
         }
 
+        private int getSelectedIndexFromListView (ListView listView)
+        {
+            ListView.SelectedIndexCollection indexCollection = listView.SelectedIndices;
+            int index = (indexCollection.Count > 0) ? indexCollection[0] : -1;
+  
+            return index; 
+        }
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             ListView.SelectedIndexCollection indexCat = lstCategory.SelectedIndices;
