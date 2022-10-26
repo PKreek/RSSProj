@@ -35,6 +35,22 @@ namespace BusinessLayer.Controllers
             return podcast;
         }
 
+        //public async void addAsync() 
+        //{
+
+        //}
+
+
+        //public Podcast AddPodcast(string url, string catName)
+        //{
+        //    Podcast podcast = new Podcast(url);
+        //    Podcasts.Add(podcast);
+        //    podcast.Category = catName;
+        //    feedReader.ReadAsync(podcast);
+
+        //    return podcast;
+        //}
+
         public void DeletePodcastByCategory(Category category)
         {
             Podcasts.RemoveAll(x => x.Category.Equals(category.CatName));

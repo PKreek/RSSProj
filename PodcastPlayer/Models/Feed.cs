@@ -24,6 +24,11 @@ namespace Models
 
         }
 
+        public Feed(string url)
+        {
+            Url = url;
+        }
+
         public virtual void DisplayInfo()
         {
 

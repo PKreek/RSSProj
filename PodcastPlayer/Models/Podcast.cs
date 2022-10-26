@@ -16,13 +16,19 @@ namespace Models
 
         }
 
+        public Podcast(string url)
+        {
+            Url = url;
+            Episodes = new List<Episode>();
+        }
+
         public Podcast(string podID, string name, double frequency, string category) 
         {
             PodID = podID;
             Name = name;
             Frequency = frequency;
             Category = category;
-            //Episodes = new List<Episode>();
+           // Episodes = new List<Episode>();
         }
 
         public Podcast(string name, string url) : base(name, url)

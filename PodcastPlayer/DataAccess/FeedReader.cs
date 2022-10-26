@@ -40,7 +40,7 @@ namespace DataAccess
                 string description = item.Summary.Text;
                 description = Regex.Replace(description, @"<.+?>", String.Empty);
                 Episode episode = new Episode(item.Title.Text, description);
-              //  feed.Episodes.Add(episode);
+                feed.Episodes.Add(episode);
             }
         }
 
