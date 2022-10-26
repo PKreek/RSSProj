@@ -166,14 +166,17 @@ namespace PodcastPlayer
             if (indexCat > -1)
             {
                 Category category = categoryController.categories[indexCat];
-                for (int i = 0; i < podcastController.Podcasts.Count(); i++) 
-                { 
-                    if(category.CatName == podcastController.Podcasts[i].Category)
+                if (!txtCategory.Text.Equals(""))
+                {
+                    for (int i = 0; i < podcastController.Podcasts.Count(); i++)
                     {
-                        podcastController.Podcasts[i].Category = txtCategory.Text;
+                        if (category.CatName == podcastController.Podcasts[i].Category)
+                        {
+                            podcastController.Podcasts[i].Category = txtCategory.Text;
+                        }
                     }
+                    category.CatName = txtCategory.Text;
                 }
-                category.CatName = txtCategory.Text;
                 lasCategory();
                 cbxCategory.Items.Clear();
                 fillCategoryCbx();
