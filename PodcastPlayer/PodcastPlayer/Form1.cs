@@ -133,7 +133,7 @@ namespace PodcastPlayer
             {
                 Podcast podcast = podcastController.Podcasts[index];
                 podcast.PodName = txtChange.Text;
-                podcast.Category = cbxCategory.SelectedItem.ToString();
+                if (cbxCategory.SelectedItem != null) { podcast.Category = cbxCategory.SelectedItem.ToString(); }
                 readPodcast();
                 podcastController.SavePodcast();
                 txtUrl.Clear();
