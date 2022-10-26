@@ -266,5 +266,10 @@ namespace PodcastPlayer
                 }
             }
         }
+
+        private void lstCategory_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            readPodcast();
+        }
     }
 }

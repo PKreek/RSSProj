@@ -46,6 +46,7 @@
             this.colFrequency = new System.Windows.Forms.ColumnHeader();
             this.colCategory = new System.Windows.Forms.ColumnHeader();
             this.lstCategory = new System.Windows.Forms.ListView();
+            this.KategoriHeader = new System.Windows.Forms.ColumnHeader();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.lblEpisode = new System.Windows.Forms.Label();
             this.txtChange = new System.Windows.Forms.TextBox();
             this.lblEnterCategory = new System.Windows.Forms.Label();
-            this.KategoriHeader = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lblCategories
@@ -233,7 +233,13 @@
             this.lstCategory.TabIndex = 14;
             this.lstCategory.UseCompatibleStateImageBehavior = false;
             this.lstCategory.View = System.Windows.Forms.View.Details;
+            this.lstCategory.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lstCategory_ColumnClick);
             this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
+            // 
+            // KategoriHeader
+            // 
+            this.KategoriHeader.Text = "Kategori";
+            this.KategoriHeader.Width = 1000;
             // 
             // txtCategory
             // 
@@ -307,11 +313,6 @@
             this.lblEnterCategory.Size = new System.Drawing.Size(301, 29);
             this.lblEnterCategory.TabIndex = 21;
             this.lblEnterCategory.Text = "Lägg till/ändra kategori:";
-            // 
-            // KategoriHeader
-            // 
-            this.KategoriHeader.Text = "Kategori";
-            this.KategoriHeader.Width = 1000;
             // 
             // Form1
             // 
