@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using Models;
+using System;
 using System.Net;
 using System.ServiceModel.Syndication;
 using System.Text.RegularExpressions;
@@ -25,6 +26,22 @@ namespace DataAccess
             }
 
             return podcast;
+        }
+
+        public async Task ReadAsync(Feed feed)
+        {
+            XmlReader reader = XmlReader.Create(feed.Url);
+            SyndicationFeed syndicationFeed = SyndicationFeed.Load(reader);
+
+            feed.Name = syndicationFeed.Title.Text;
+
+            foreach (SyndicationItem item in syndicationFeed.Items)
+            {
+                string description = item.Summary.Text;
+                description = Regex.Replace(description, @"<.+?>", String.Empty);
+                Episode episode = new Episode(item.Title.Text, description);
+              //  feed.Episodes.Add(episode);
+            }
         }
 
         //public List<Episode> GetEpisodesList(string url)
