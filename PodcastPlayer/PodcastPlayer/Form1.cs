@@ -257,7 +257,7 @@ namespace PodcastPlayer
             if(indexCat > -1)
             {
                 Category category =  categoryController.categories[indexCat];
-                var list = podcastController.Podcasts.Where(x => x.Category == category.CatName).ToList();
+                var list = podcastController.Podcasts.Where(x => x.Category == category.CatName);
                 lstPodcasts.Items.Clear();  
                 foreach (var podcast in list)
                 {
