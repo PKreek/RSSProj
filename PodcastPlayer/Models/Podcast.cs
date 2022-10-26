@@ -33,7 +33,11 @@ namespace Models
             Episodes = new List<Episode>();
         }
 
-       
+        public override void DisplayInfo()
+        {
+            Console.WriteLine("Podcastnamn " + Name + "Category " + Category);
+        }
+
 
     }
 }

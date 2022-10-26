@@ -22,5 +22,10 @@ namespace Models
         {
 
         }
+
+        public virtual void DisplayInfo()
+        {
+
+        }
     }
 }
