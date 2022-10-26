@@ -26,14 +26,14 @@ namespace BusinessLayer.Controllers
             //RetrieveEpisodes();
         }
 
-        public Podcast AddPodcast(string url, string catName)
-        {
-            Podcast podcast = feedReader.ReadFeed(url);
-            Podcasts.Add(podcast);
-            podcast.Category = catName;
-            //RetrieveEpisodes();
-            return podcast;
-        }
+        //public Podcast AddPodcast(string url, string catName)
+        //{
+        //    Podcast podcast = feedReader.ReadFeed(url);
+        //    Podcasts.Add(podcast);
+        //    podcast.Category = catName;
+        //    //RetrieveEpisodes();
+        //    return podcast;
+        //}
 
         //public async void addAsync() 
         //{
@@ -41,15 +41,15 @@ namespace BusinessLayer.Controllers
         //}
 
 
-        //public Podcast AddPodcast(string url, string catName)
-        //{
-        //    Podcast podcast = new Podcast(url);
-        //    Podcasts.Add(podcast);
-        //    podcast.Category = catName;
-        //    feedReader.ReadAsync(podcast);
+        public async Task<Podcast> AddPodcast(string url, string catName)
+        {
+            Podcast podcast = new Podcast(url);
+            Podcasts.Add(podcast);
+            podcast.Category = catName;
+            await Task.Run(()=>feedReader.ReadAsync(podcast));
 
-        //    return podcast;
-        //}
+            return podcast;
+        }
 
         public void DeletePodcastByCategory(Category category)
         {

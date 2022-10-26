@@ -23,7 +23,7 @@ namespace PodcastPlayer
             lblDescription.MaximumSize = new Size(400, 0);
         }
 
-        private void btnNewPod_Click(object sender, EventArgs e)
+        private async void btnNewPod_Click(object sender, EventArgs e)
         {
 
             if(cbxCategory.SelectedIndex != -1)
@@ -31,7 +31,8 @@ namespace PodcastPlayer
                 try
                 {
                     string catName = cbxCategory.SelectedItem.ToString();
-                    Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
+                    podcastController.AddPodcast(txtUrl.Text, catName);
+                    Podcast podcast = await Task.Run(()=>podcastController.AddPodcast(txtUrl.Text, catName));
                     if (!txtChange.Text.Equals(""))
                     {
                         podcast.Name = txtChange.Text;
