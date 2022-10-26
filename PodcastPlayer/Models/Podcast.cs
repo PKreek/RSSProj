@@ -10,7 +10,6 @@ namespace Models
     {
         public string PodID { get; set; }
         public double Frequency { get; set; }
-        public List<Episode> Episodes { get; set; }
 
         public Podcast()
         {

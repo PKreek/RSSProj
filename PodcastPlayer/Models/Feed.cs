@@ -11,6 +11,7 @@ namespace Models
         public string Name { get; set; }
         public string Url { get; set; }
         public string Category { get; set; }
+        public List<Episode> Episodes { get; set; }
 
         public Feed (string name, string url)
         {
