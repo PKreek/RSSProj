@@ -31,7 +31,7 @@ namespace DataAccess
         public async Task ReadAsync(Feed feed)
         {
             XmlReader reader = XmlReader.Create(feed.Url);
-            SyndicationFeed syndicationFeed = SyndicationFeed.Load(reader);
+            SyndicationFeed syndicationFeed = await Task.Run(()=>SyndicationFeed.Load(reader));
 
             feed.Name = syndicationFeed.Title.Text;
 
