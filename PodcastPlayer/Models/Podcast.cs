@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace Models
 {
     [Serializable]
-    public class Podcast
+    public class Podcast : Feed
     {
         public string PodID { get; set; }
         public string PodName { get; set; }
