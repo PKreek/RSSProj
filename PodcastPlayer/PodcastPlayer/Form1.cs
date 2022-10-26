@@ -217,7 +217,6 @@ namespace PodcastPlayer
                         //    }
                         //}
                         categoryController.DeleteCategory(i);
-                        lstCategory.Clear();
                         lasCategory();
                         cbxCategory.Items.Clear();
                         fillCategoryCbx();
