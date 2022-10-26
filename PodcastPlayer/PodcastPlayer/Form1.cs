@@ -108,7 +108,7 @@ namespace PodcastPlayer
                 foreach (var podcast in list)
                 {
                     ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
-                    item.SubItems.Add(podcast.PodName);
+                    item.SubItems.Add(podcast.Name);
                     item.SubItems.Add(podcast.Frequency.ToString());
                     item.SubItems.Add(podcast.Category);
                     lstPodcasts.Items.Add(item);
@@ -132,7 +132,7 @@ namespace PodcastPlayer
             if (index > -1)
             {
                 Podcast podcast = podcastController.Podcasts[index];
-                podcast.PodName = txtChange.Text;
+                podcast.Name = txtChange.Text;
                 if (cbxCategory.SelectedItem != null) { podcast.Category = cbxCategory.SelectedItem.ToString(); }
                 readPodcast();
                 podcastController.SavePodcast();
@@ -259,7 +259,7 @@ namespace PodcastPlayer
                 foreach (var podcast in list)
                 {
                     ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
-                    item.SubItems.Add(podcast.PodName);
+                    item.SubItems.Add(podcast.Name);
                     item.SubItems.Add(podcast.Frequency.ToString());
                     item.SubItems.Add(podcast.Category);
                     lstPodcasts.Items.Add(item);
