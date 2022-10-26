@@ -31,7 +31,6 @@ namespace PodcastPlayer
                 try
                 {
                     string catName = cbxCategory.SelectedItem.ToString();
-                    podcastController.AddPodcast(txtUrl.Text, catName);
                     Podcast podcast = await Task.Run(()=>podcastController.AddPodcast(txtUrl.Text, catName));
                     if (!txtChange.Text.Equals(""))
                     {
