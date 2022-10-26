@@ -54,6 +54,7 @@
             this.lblEpisode = new System.Windows.Forms.Label();
             this.txtChange = new System.Windows.Forms.TextBox();
             this.lblEnterCategory = new System.Windows.Forms.Label();
+            this.KategoriHeader = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lblCategories
@@ -191,6 +192,7 @@
             this.colName,
             this.colFrequency,
             this.colCategory});
+            this.lstPodcasts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstPodcasts.FullRowSelect = true;
             this.lstPodcasts.Location = new System.Drawing.Point(28, 27);
             this.lstPodcasts.Name = "lstPodcasts";
@@ -203,30 +205,35 @@
             // colEpisodes
             // 
             this.colEpisodes.Text = "Avsnitt";
-            this.colEpisodes.Width = 80;
+            this.colEpisodes.Width = 150;
             // 
             // colName
             // 
             this.colName.Text = "Namn";
-            this.colName.Width = 200;
+            this.colName.Width = 300;
             // 
             // colFrequency
             // 
             this.colFrequency.Text = "Frekvens";
-            this.colFrequency.Width = 120;
+            this.colFrequency.Width = 150;
             // 
             // colCategory
             // 
             this.colCategory.Text = "Kategori";
-            this.colCategory.Width = 120;
+            this.colCategory.Width = 300;
             // 
             // lstCategory
             // 
+            this.lstCategory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.KategoriHeader});
+            this.lstCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstCategory.Location = new System.Drawing.Point(1116, 72);
             this.lstCategory.Name = "lstCategory";
             this.lstCategory.Size = new System.Drawing.Size(504, 211);
             this.lstCategory.TabIndex = 14;
             this.lstCategory.UseCompatibleStateImageBehavior = false;
+            this.lstCategory.View = System.Windows.Forms.View.Details;
+            this.lstCategory.SelectedIndexChanged += new System.EventHandler(this.lstCategory_SelectedIndexChanged);
             // 
             // txtCategory
             // 
@@ -301,6 +308,11 @@
             this.lblEnterCategory.TabIndex = 21;
             this.lblEnterCategory.Text = "Lägg till/ändra kategori:";
             // 
+            // KategoriHeader
+            // 
+            this.KategoriHeader.Text = "Kategori";
+            this.KategoriHeader.Width = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(26F, 51F);
@@ -364,5 +376,6 @@
         private ColumnHeader Avsnitt;
         private TextBox txtChange;
         private Label lblEnterCategory;
+        private ColumnHeader KategoriHeader;
     }
 }

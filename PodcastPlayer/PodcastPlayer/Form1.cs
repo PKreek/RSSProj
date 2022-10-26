@@ -247,5 +247,24 @@ namespace PodcastPlayer
                 }
             }
         }
+
+        private void lstCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexCat = getSelectedIndexFromListView(lstCategory);
+            if(indexCat > -1)
+            {
+                Category category =  categoryController.categories[indexCat];
+                var list = podcastController.Podcasts.Where(x => x.Category == category.CatName).ToList();
+                lstPodcasts.Items.Clear();  
+                foreach (var podcast in list)
+                {
+                    ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
+                    item.SubItems.Add(podcast.PodName);
+                    item.SubItems.Add(podcast.Frequency.ToString());
+                    item.SubItems.Add(podcast.Category);
+                    lstPodcasts.Items.Add(item);
+                }
+            }
+        }
     }
 }
