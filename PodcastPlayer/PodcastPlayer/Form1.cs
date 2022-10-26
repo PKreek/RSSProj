@@ -32,6 +32,10 @@ namespace PodcastPlayer
                 {
                     string catName = cbxCategory.SelectedItem.ToString();
                     Podcast podcast = podcastController.AddPodcast(txtUrl.Text, catName);
+                    if(!txtChange.Text.Equals(""))
+                    {
+                        podcast.Name = txtChange.Text;
+                    }
                     podcastController.SavePodcast();
                 }
                 catch (UriFormatException)
