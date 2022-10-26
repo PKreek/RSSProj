@@ -136,8 +136,12 @@ namespace PodcastPlayer
             if (index > -1)
             {
                 Podcast podcast = podcastController.Podcasts[index];
-                podcast.Name = txtChange.Text;
+                //podcast.Name = txtChange.Text;
                 if (cbxCategory.SelectedItem != null) { podcast.Category = cbxCategory.SelectedItem.ToString(); }
+                if (!txtChange.Text.Equals(""))
+                {
+                    podcast.Name = txtChange.Text;
+                }
                 readPodcast();
                 podcastController.SavePodcast();
                 txtUrl.Clear();
