@@ -259,7 +259,7 @@ namespace PodcastPlayer
 
         public void readPodcast()
         {
-            List<Podcast> list = podcastController.Podcasts;
+            List<Podcast> list = podcastController.FilteredPodcasts;
             lstPodcasts.Items.Clear();
 
             if (list.Count > 0)
