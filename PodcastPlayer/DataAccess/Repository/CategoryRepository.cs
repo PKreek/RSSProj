@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using System.Xml.Serialization;
-
+using System.Data;
 
 namespace DataAccessLayer.Repository
 {
@@ -34,14 +34,17 @@ namespace DataAccessLayer.Repository
         }
         public Category GetByID(string id)
         {
-            Category category = null;
-            foreach(var item in CategorySerializer.Deserialize())
-            {
-                if (item.CategoryId.Equals(id))
-                {
-                    category = item;
-                }
-            }
+            var category = CategorySerializer.Deserialize()
+                .Where(item => item.CategoryId.Equals(id)).First();
+
+            //    Category category = null;
+            //    foreach(var item in CategorySerializer.Deserialize())
+            //    {
+            //        if (item.CategoryId.Equals(id))
+            //        {
+            //            category = item;
+            //        }
+            //    }
             return category;
         }
         public void Insert (List<Category> theObject)
