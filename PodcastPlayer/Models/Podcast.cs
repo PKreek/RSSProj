@@ -40,7 +40,7 @@ namespace Models
 
         public override void DisplayInfo()
         {
-            Console.WriteLine("Podcastnamn " + Name + "Category " + Category);
+            Console.WriteLine("Podcastnamn " + Name + "Kategori " + Category);
         }
 
 
