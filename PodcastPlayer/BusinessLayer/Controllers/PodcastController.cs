@@ -59,7 +59,7 @@ namespace BusinessLayer.Controllers
             return FilteredPodcasts;
         }
 
-        public void DeletePodcastByCategory(Category category)
+        public void DeletePodcast(Category category)
         {
             Podcasts.RemoveAll(x => x.Category.Equals(category.CatName));
         }

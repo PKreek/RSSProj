@@ -168,7 +168,7 @@ namespace PodcastPlayer
                     {
                         if (category == categoryController.categories[i])
                         {
-                            podcastController.DeletePodcastByCategory(category);
+                            podcastController.DeletePodcast(category);
                             //List<Podcast> podcastlista = podcastController.Podcasts;
 
                             //podcastlista.RemoveAll(x => x.Category.Equals(category.CatName));
