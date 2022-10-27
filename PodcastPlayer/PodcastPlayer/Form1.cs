@@ -16,7 +16,7 @@ namespace PodcastPlayer
             InitializeComponent();
             podcastController = new PodcastController();
             categoryController = new CategoryController();
-            lasCategory();
+            readCategory();
             fillCategoryCbx();
             readPodcast();
             lblDescription.AutoSize = true;
@@ -89,45 +89,6 @@ namespace PodcastPlayer
                 txtCategory.Clear();
             }
         }
-        public void lasCategory()
-        {
-            List<Category> list = categoryController.categories;
-            lstCategory.Items.Clear();  
-            if (list.Count > 0)
-            {
-                foreach (var item in list)
-                {
-                    lstCategory.Items.Add(item.CatName);
-                }
-            }
-        }
-
-        public void readPodcast()
-        {
-            List<Podcast> list = podcastController.Podcasts;
-            lstPodcasts.Items.Clear();
-
-            if (list.Count > 0)
-            {
-                foreach (var podcast in list)
-                {
-                    ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
-                    item.SubItems.Add(podcast.Name);
-                    item.SubItems.Add(podcast.Frequency.ToString());
-                    item.SubItems.Add(podcast.Category);
-                    lstPodcasts.Items.Add(item);
-                }
-            }
-        }
-
-        public void fillCategoryCbx()
-        {
-            List<Category> list = categoryController.categories;
-            foreach (var item in list)
-            {
-                cbxCategory.Items.Add(item.CatName);
-            }
-        }
 
         private void btnSavePod_Click(object sender, EventArgs e)
         {
@@ -177,7 +138,7 @@ namespace PodcastPlayer
                     }
                     category.CatName = txtCategory.Text;
                 }
-                lasCategory();
+                readCategory();
                 cbxCategory.Items.Clear();
                 fillCategoryCbx();
                 podcastController.SavePodcast();
@@ -190,14 +151,6 @@ namespace PodcastPlayer
         private void txtUrl_MouseClick(object sender, MouseEventArgs e)
         {
             txtUrl.Clear();
-        }
-
-        private int getSelectedIndexFromListView (ListView listView)
-        {
-            ListView.SelectedIndexCollection indexCollection = listView.SelectedIndices;
-            int index = (indexCollection.Count > 0) ? indexCollection[0] : -1;
-  
-            return index; 
         }
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
@@ -227,7 +180,7 @@ namespace PodcastPlayer
                             //    }
                             //}
                             categoryController.DeleteCategory(i);
-                            lasCategory();
+                            readCategory();
                             cbxCategory.Items.Clear();
                             fillCategoryCbx();
                             readPodcast();
@@ -284,6 +237,54 @@ namespace PodcastPlayer
         private void lstCategory_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             readPodcast();
+        }
+
+        public void fillCategoryCbx()
+        {
+            List<Category> list = categoryController.categories;
+            foreach (var item in list)
+            {
+                cbxCategory.Items.Add(item.CatName);
+            }
+        }
+
+        private int getSelectedIndexFromListView(ListView listView)
+        {
+            ListView.SelectedIndexCollection indexCollection = listView.SelectedIndices;
+            int index = (indexCollection.Count > 0) ? indexCollection[0] : -1;
+
+            return index;
+        }
+
+        public void readPodcast()
+        {
+            List<Podcast> list = podcastController.Podcasts;
+            lstPodcasts.Items.Clear();
+
+            if (list.Count > 0)
+            {
+                foreach (var podcast in list)
+                {
+                    ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
+                    item.SubItems.Add(podcast.Name);
+                    item.SubItems.Add(podcast.Frequency.ToString());
+                    item.SubItems.Add(podcast.Category);
+                    lstPodcasts.Items.Add(item);
+                }
+            }
+        }
+
+        public void readCategory()
+        {
+            List<Category> list = categoryController.categories;
+            lstCategory.Items.Clear();
+            if (list.Count > 0)
+            {
+                foreach (var item in list)
+                {
+                    lstCategory.Items.Add(item.CatName);
+                }
+            }
         }
     }
 }
