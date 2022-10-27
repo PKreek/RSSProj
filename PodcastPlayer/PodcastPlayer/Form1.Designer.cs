@@ -231,7 +231,7 @@
             // 
             // KategoriHeader
             // 
-            this.KategoriHeader.Text = "Kategori";
+            this.KategoriHeader.Text = "Alla kategorier";
             this.KategoriHeader.Width = 1000;
             // 
             // txtCategory
