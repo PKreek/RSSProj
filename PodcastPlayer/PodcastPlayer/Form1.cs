@@ -259,12 +259,12 @@ namespace PodcastPlayer
 
         public void readPodcast()
         {
-            List<Podcast> list = podcastController.FilteredPodcasts;
+            podcastController.FilteredPodcasts = podcastController.Podcasts;
             lstPodcasts.Items.Clear();
 
-            if (list.Count > 0)
+            if (podcastController.FilteredPodcasts.Count > 0)
             {
-                foreach (var podcast in list)
+                foreach (var podcast in podcastController.FilteredPodcasts)
                 {
                     ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
                     item.SubItems.Add(podcast.Name);
