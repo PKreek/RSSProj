@@ -16,9 +16,6 @@ namespace BusinessLayer.Controllers
         {
 
         }
-        public void MyDivideException()
-        {
-            Console.WriteLine("Exception occured, divisor should not be zero");
-        }
+
     }
 }

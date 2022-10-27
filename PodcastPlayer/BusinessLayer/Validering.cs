@@ -1,12 +1,14 @@
-﻿using System;
+﻿using BusinessLayer.Controllers;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    class Validering
+    public class Validering
     {
 
         public Validering()
@@ -14,18 +16,15 @@ namespace BusinessLayer
 
         }
 
-        public bool isEmpty(string field)
+        public void isEmpty(string field)
         {
 
-
-            bool result = false;
-
-            if (field == null)
+            if (field.Equals("")) 
             {
-                result = true;
+                throw new EmptyException();
             }
 
-            return result;
+            
         }
 
         public bool toLong(string field)

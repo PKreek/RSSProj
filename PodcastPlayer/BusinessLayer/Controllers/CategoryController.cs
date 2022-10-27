@@ -30,18 +30,8 @@ namespace BusinessLayer.Controllers
         {
             categories = categoryRepository.GetAll();
         }
-        public bool validationToLong(string text)
-        {
-            bool test = false;
-            test = validering.toLong(text);
-            return test;
-        }
-        public bool validationIsEmpty(string text)
-        {
-            bool test = false;
-            test = validering.isEmpty(text);
-            return test;
-        }
+  
+
 
         public void DeleteCategory(int index)
         {

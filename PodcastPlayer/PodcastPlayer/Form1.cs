@@ -1,8 +1,10 @@
-using BusinessLayer.Controllers;
+ using BusinessLayer.Controllers;
 using Models;
 using System;
+using System.CodeDom;
 using System.Diagnostics;
 using System.Reflection;
+using BusinessLayer;
 
 namespace PodcastPlayer
 {
@@ -10,9 +12,11 @@ namespace PodcastPlayer
     {
         PodcastController podcastController;
         CategoryController categoryController;
+        Validering validering = new Validering();
 
         public Form1()
         {
+            EmptyException empty = new EmptyException();
             InitializeComponent();
             podcastController = new PodcastController();
             categoryController = new CategoryController();
@@ -72,21 +76,26 @@ namespace PodcastPlayer
 
         private void btnNewCategory_Click(object sender, EventArgs e)
         {
-
-            if (txtCategory.Text == "h")
+            
+            try
             {
-                MessageBox.Show("fel");
+                
+                
+                    string ruta = txtCategory.Text;
 
-                throw new EmptyException();
+                validering.isEmpty(ruta);             
+                    Category category = categoryController.AddCategory(txtCategory.Text);
+                    lstCategory.Items.Add(category.CatName);
+                    categoryController.SaveCategory();
+                    cbxCategory.Items.Clear();
+                    fillCategoryCbx();
+                    txtCategory.Clear();
+                
             }
-            else
+            catch(EmptyException ex)
             {
-                Category category = categoryController.AddCategory(txtCategory.Text);
-                lstCategory.Items.Add(category.CatName);
-                categoryController.SaveCategory();
-                cbxCategory.Items.Clear();
-                fillCategoryCbx();
-                txtCategory.Clear();
+                MessageBox.Show(ex.Message);
+
             }
         }
 
