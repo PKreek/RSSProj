@@ -27,17 +27,13 @@ namespace BusinessLayer
             
         }
 
-        public bool toLong(string field)
+        public void toLong(string field)
         {
-            bool result = false;
-            if(field.Length > 25)
+            if (field.Length > 25)
             {
-                result = true;
+                throw new ToLongException();
             }
-
-            return result; 
         }
-
     }
 
 }

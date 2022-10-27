@@ -5,6 +5,7 @@ using System.CodeDom;
 using System.Diagnostics;
 using System.Reflection;
 using BusinessLayer;
+using System.Reflection.Metadata;
 
 namespace PodcastPlayer
 {
@@ -16,7 +17,7 @@ namespace PodcastPlayer
 
         public Form1()
         {
-            EmptyException empty = new EmptyException();
+            
             InitializeComponent();
             podcastController = new PodcastController();
             categoryController = new CategoryController();
@@ -78,24 +79,27 @@ namespace PodcastPlayer
         {
             
             try
-            {
-                
-                
+            { 
                     string ruta = txtCategory.Text;
 
-                validering.isEmpty(ruta);             
+                    validering.isEmpty(ruta);
+                    validering.toLong(ruta);
                     Category category = categoryController.AddCategory(txtCategory.Text);
                     lstCategory.Items.Add(category.CatName);
                     categoryController.SaveCategory();
                     cbxCategory.Items.Clear();
                     fillCategoryCbx();
-                    txtCategory.Clear();
-                
+                    txtCategory.Clear();           
             }
             catch(EmptyException ex)
             {
                 MessageBox.Show(ex.Message);
 
+
+            }
+            catch(ToLongException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
