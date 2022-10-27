@@ -232,7 +232,7 @@
             // KategoriHeader
             // 
             this.KategoriHeader.Text = "Alla kategorier";
-            this.KategoriHeader.Width = 1000;
+            this.KategoriHeader.Width = 500;
             // 
             // txtCategory
             // 
