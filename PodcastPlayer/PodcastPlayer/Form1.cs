@@ -163,23 +163,14 @@ namespace PodcastPlayer
                 DialogResult dialogResult = MessageBox.Show("Är du säker att du vill ta bort kategorin och alla podcasts?", "Bekräfta", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    for (int i = 0; i < categoryController.categories.Count(); i++)
-                    {
-                        if (category == categoryController.categories[i])
-                        {
-                            podcastController.DeletePodcast(category);
-                            categoryController.DeleteCategory(i);
-                            readCategory();
-                            cbxCategory.Items.Clear();
-                            fillCategoryCbx();
-                            readPodcast();
-                            lstEpisode.Items.Clear();
-                            podcastController.SavePodcast();
-                            categoryController.SaveCategory();
-                        }
-                    }
+                    podcastController.DeletePodcast(category);
+                    categoryController.DeleteCategory(indexCat);
+                    readCategory();
+                    
+                    fillCategoryCbx();
+                    readPodcast();
+                    lstEpisode.Items.Clear();
                 }
-
             }
         }
 
@@ -230,11 +221,8 @@ namespace PodcastPlayer
 
         public void fillCategoryCbx()
         {
-            List<Category> list = categoryController.categories;
-            foreach (var item in list)
-            {
-                cbxCategory.Items.Add(item.CatName);
-            }
+            cbxCategory.Items.Clear();
+            cbxCategory.Items.AddRange(categoryController.categories.Select(x => x.CatName).ToArray());
         }
 
         private int getSelectedIndexFromListView(ListView listView)

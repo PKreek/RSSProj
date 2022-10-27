@@ -45,7 +45,8 @@ namespace BusinessLayer.Controllers
 
         public void DeleteCategory(int index)
         {
-            categoryRepository.Delete(index);      
+            categoryRepository.Delete(index);
+            SaveCategory();
         }
         
         public void SaveCategory()

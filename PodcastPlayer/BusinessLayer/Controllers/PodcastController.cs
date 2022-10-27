@@ -62,6 +62,7 @@ namespace BusinessLayer.Controllers
         public void DeletePodcast(Category category)
         {
             Podcasts.RemoveAll(x => x.Category.Equals(category.CatName));
+            SavePodcast();
         }
 
         public void DeletePodcast(int index)
