@@ -97,7 +97,6 @@ namespace PodcastPlayer
             if (index > -1)
             {
                 Podcast podcast = podcastController.Podcasts[index];
-                //podcast.Name = txtChange.Text;
                 if (cbxCategory.SelectedItem != null) { podcast.Category = cbxCategory.SelectedItem.ToString(); }
                 if (!txtChange.Text.Equals(""))
                 {
@@ -169,16 +168,6 @@ namespace PodcastPlayer
                         if (category == categoryController.categories[i])
                         {
                             podcastController.DeletePodcast(category);
-                            //List<Podcast> podcastlista = podcastController.Podcasts;
-
-                            //podcastlista.RemoveAll(x => x.Category.Equals(category.CatName));
-                            //for (int j = 0; j < podcastController.Podcasts.Count; j++)
-                            //{
-                            //    if (category.CatName == podcastController.Podcasts[j].Category)
-                            //    {
-                            //        podcastController.DeletePodcast(j);
-                            //    }
-                            //}
                             categoryController.DeleteCategory(i);
                             readCategory();
                             cbxCategory.Items.Clear();

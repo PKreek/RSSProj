@@ -28,9 +28,7 @@ namespace BusinessLayer.Controllers
         }
         private void readCategory()
         {
-            //CategoryRepository catRep = new CategoryRepository();
             categories = categoryRepository.GetAll();
-
         }
         public bool validationToLong(string text)
         {
@@ -49,20 +47,7 @@ namespace BusinessLayer.Controllers
         {
             categoryRepository.Delete(index);      
         }
-        //public string ReturnCat(string namn)
-        //{
-        //    string obj = "";
-        //    foreach (var category in categories)
-        //    {
-        //        if(category.CatName == namn)
-        //        {
-        //            obj = category;
-        //        }
-              
-        //    }
-        //    return obj;
-        //}
-
+        
         public void SaveCategory()
         {
             categoryRepository.Insert(categories);
