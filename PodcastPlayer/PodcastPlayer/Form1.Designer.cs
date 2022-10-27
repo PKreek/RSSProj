@@ -43,7 +43,6 @@
             this.lstPodcasts = new System.Windows.Forms.ListView();
             this.colEpisodes = new System.Windows.Forms.ColumnHeader();
             this.colName = new System.Windows.Forms.ColumnHeader();
-            this.colFrequency = new System.Windows.Forms.ColumnHeader();
             this.colCategory = new System.Windows.Forms.ColumnHeader();
             this.lstCategory = new System.Windows.Forms.ListView();
             this.KategoriHeader = new System.Windows.Forms.ColumnHeader();
@@ -190,7 +189,6 @@
             this.lstPodcasts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colEpisodes,
             this.colName,
-            this.colFrequency,
             this.colCategory});
             this.lstPodcasts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lstPodcasts.FullRowSelect = true;
@@ -211,11 +209,6 @@
             // 
             this.colName.Text = "Namn";
             this.colName.Width = 300;
-            // 
-            // colFrequency
-            // 
-            this.colFrequency.Text = "Frekvens";
-            this.colFrequency.Width = 150;
             // 
             // colCategory
             // 
@@ -366,7 +359,6 @@
         private ListView lstPodcasts;
         private ColumnHeader colEpisodes;
         private ColumnHeader colName;
-        private ColumnHeader colFrequency;
         private ColumnHeader colCategory;
         private ListView lstCategory;
         private TextBox txtCategory;

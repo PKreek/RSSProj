@@ -9,33 +9,21 @@ namespace Models
     public class Podcast : Feed
     {
         public string PodID { get; set; }
-        public double Frequency { get; set; }
 
         public Podcast()
         {
 
         }
 
-        public Podcast(string url)
+        public Podcast(string url) : base(url)
         {
-            Url = url;
-            Episodes = new List<Episode>();
+            
         }
 
-        public Podcast(string podID, string name, double frequency, string category) 
-        {
-            PodID = podID;
-            Name = name;
-            Frequency = frequency;
-            Category = category;
-           // Episodes = new List<Episode>();
-        }
 
         public Podcast(string name, string url) : base(name, url)
         {
-            Name = name;
-            Url = url;
-            Episodes = new List<Episode>();
+   
         }
 
         public override void DisplayInfo()

@@ -17,6 +17,7 @@ namespace Models
         {
             Name = name;
             Url = url;
+            Episodes = new List<Episode> ();    
         }
 
         public Feed()
@@ -27,6 +28,7 @@ namespace Models
         public Feed(string url)
         {
             Url = url;
+            Episodes = new List<Episode>(); 
         }
 
         public virtual void DisplayInfo()

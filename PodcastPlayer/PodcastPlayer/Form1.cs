@@ -227,7 +227,6 @@ namespace PodcastPlayer
                 {
                     ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
                     item.SubItems.Add(podcast.Name);
-                    item.SubItems.Add(podcast.Frequency.ToString());
                     item.SubItems.Add(podcast.Category);
                     lstPodcasts.Items.Add(item);
                 }
@@ -268,7 +267,6 @@ namespace PodcastPlayer
                 {
                     ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
                     item.SubItems.Add(podcast.Name);
-                    item.SubItems.Add(podcast.Frequency.ToString());
                     item.SubItems.Add(podcast.Category);
                     lstPodcasts.Items.Add(item);
                 }
