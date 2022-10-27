@@ -8,8 +8,6 @@ namespace Models
     [Serializable]
     public class Podcast : Feed
     {
-        public string PodID { get; set; }
-
         public Podcast()
         {
 

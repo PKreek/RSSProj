@@ -11,8 +11,7 @@ namespace Models
     {
         public News(string name, string url) : base(name, url)
         {
-            Name = name;
-            Url = url;
+           
         }
 
         public News()

@@ -32,33 +32,13 @@ namespace DataAccessLayer.Repository
             }
             return ListOfCategories;
         }
-        public Category GetByID(string id)
-        {
-            var category = CategorySerializer.Deserialize()
-                .Where(item => item.CategoryId.Equals(id)).First();
-
-            //    Category category = null;
-            //    foreach(var item in CategorySerializer.Deserialize())
-            //    {
-            //        if (item.CategoryId.Equals(id))
-            //        {
-            //            category = item;
-            //        }
-            //    }
-            return category;
-        }
+        
         public void Insert (List<Category> theObject)
         {
             ListOfCategories = theObject;
             SaveChanges();
         }
-        public void Update (int index, Category theNewObject)
-        {
-            if  (index >=0)
-            {
-                ListOfCategories[index] = theNewObject;
-            }
-        }
+        
         public void Delete (int index)
         {
             ListOfCategories.RemoveAt(index);

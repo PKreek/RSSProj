@@ -32,30 +32,13 @@ namespace DataAccessLayer.Repository
             }
             return ListOfPodcasts;
         }
-        public Podcast GetByID(string id)
-        {
-            Podcast podcast = null;
-            foreach (var item in PodcastSerializer.Deserialize())
-            {
-                if (item.PodID.Equals(id))
-                {
-                    podcast = item;
-                }
-            }
-            return podcast;
-        }
+        
         public void Insert(List<Podcast> theObject)
         {
             ListOfPodcasts = theObject;
             SaveChanges();
         }
-        public void Update(int index, Podcast theNewObject)
-        {
-            if (index >= 0)
-            {
-                ListOfPodcasts[index] = theNewObject;
-            }
-        }
+        
         public void Delete(int index)
         {
             ListOfPodcasts.RemoveAt(index);

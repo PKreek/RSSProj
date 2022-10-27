@@ -8,13 +8,8 @@ namespace Models
 {
     public class Category
     {
-        public string CategoryId { get; set; }
         public string CatName { get; set; }
-        public Category(string catName, string catId)
-        {
-            CatName = catName;
-            CategoryId = catId;
-        }
+        
         public Category(string catName)
         {
             CatName = catName;
