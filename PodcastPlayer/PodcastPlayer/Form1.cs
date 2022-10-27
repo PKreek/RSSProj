@@ -62,7 +62,7 @@ namespace PodcastPlayer
 
             if (index > -1)
             {
-                Podcast podcast = podcastController.Podcasts[index]; 
+                Podcast podcast = podcastController.FilteredPodcasts[index]; 
                 foreach (Episode episode in podcast.Episodes)
                 {
                     lstEpisode.Items.Add(episode.EpisodeName);
@@ -117,7 +117,7 @@ namespace PodcastPlayer
 
             if (indexEpisode > -1)
             {
-                lblDescription.Text = podcastController.Podcasts[indexPodcast].Episodes[indexEpisode].EpisodeDescription;
+                lblDescription.Text = podcastController.FilteredPodcasts[indexPodcast].Episodes[indexEpisode].EpisodeDescription;
             }
         }
 
@@ -221,7 +221,7 @@ namespace PodcastPlayer
             if(indexCat > -1)
             {
                 Category category =  categoryController.categories[indexCat];
-                var list = podcastController.Podcasts.Where(x => x.Category == category.CatName);
+                var list = podcastController.FilterList(category);
                 lstPodcasts.Items.Clear();  
                 foreach (var podcast in list)
                 {
@@ -236,6 +236,7 @@ namespace PodcastPlayer
 
         private void lstCategory_ColumnClick(object sender, ColumnClickEventArgs e)
         {
+            podcastController.FilteredPodcasts = podcastController.Podcasts;
             readPodcast();
         }
 

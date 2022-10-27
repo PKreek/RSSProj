@@ -15,7 +15,8 @@ namespace BusinessLayer.Controllers
     {
         IRepository<Podcast> podcastRepository;
         IFeedReader feedReader;
-        public List<Podcast> Podcasts;
+        public List<Podcast> Podcasts { get; set; }
+        public List<Podcast> FilteredPodcasts { get; set; }
         //List<List<Episode>> episodes = new List<List<Episode>>();
 
         public PodcastController()
@@ -49,6 +50,13 @@ namespace BusinessLayer.Controllers
             await Task.Run(()=>feedReader.ReadAsync(podcast));
 
             return podcast;
+        }
+
+        public List<Podcast> FilterList (Category category)
+        {
+            FilteredPodcasts = Podcasts.Where(x => x.Category == category.CatName).ToList();
+
+            return FilteredPodcasts;
         }
 
         public void DeletePodcastByCategory(Category category)
@@ -90,6 +98,7 @@ namespace BusinessLayer.Controllers
         private void RetrievePodcasts()
         {
             Podcasts = podcastRepository.GetAll();
+            FilteredPodcasts = Podcasts;
         }
     }
 }
