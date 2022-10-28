@@ -31,9 +31,9 @@ namespace Models
             Episodes = new List<Episode>(); 
         }
 
-        public virtual void DisplayInfo()
+        public virtual string DisplayInfo()
         {
-
+            return "URL länk: " + Url;
         }
     }
 }

@@ -19,9 +19,9 @@ namespace Models
 
         }
 
-        public override void DisplayInfo()
+        public override string DisplayInfo()
         {
-            Console.WriteLine("Nyhetsnamn " + Name + "Kategori " + Category);
+            return base.DisplayInfo() + " Nyhetsnamn: " + Name + "Kategori: " + Category;
         }
     }
 }
