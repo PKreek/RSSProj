@@ -24,9 +24,9 @@ namespace Models
    
         }
 
-        public override void DisplayInfo()
+        public override string DisplayInfo()
         {
-            Console.WriteLine("Podcastnamn " + Name + "Kategori " + Category);
+            return base.DisplayInfo() + " Podcastnamn: " + Name + "Kategori: " + Category;
         }
 
 
