@@ -10,7 +10,6 @@ namespace DataAccessLayer
     internal class Serializer<T>
     {
         private string fileName;
-
         public Serializer(string fName)
         {
             fileName = fName+".xml";
