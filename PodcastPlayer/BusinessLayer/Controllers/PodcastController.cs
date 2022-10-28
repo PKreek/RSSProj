@@ -15,8 +15,8 @@ namespace BusinessLayer.Controllers
     {
         IRepository<Podcast> podcastRepository;
         IFeedReader feedReader;
-        public List<Podcast> Podcasts { get; set; }
-        public List<Podcast> FilteredPodcasts { get; set; }
+        public List<Podcast> Podcasts { get; set; } = new List<Podcast>();
+        public List<Podcast> FilteredPodcasts { get; set; } = new List<Podcast>();
         
 
         public PodcastController()
@@ -54,7 +54,7 @@ namespace BusinessLayer.Controllers
 
         public async Task<Podcast> AddPodcast(string url, string catName)
         {
-            Podcast podcast = feedReader.ReadFeed(url);
+            Podcast podcast = await Task.Run(() => feedReader.ReadFeed(url));
             Podcasts.Add(podcast);
             podcast.Category = catName;
 
