@@ -283,5 +283,15 @@ namespace PodcastPlayer
             readPodcast();
             fillCategoryCbx();
         }
+
+        private void btnDisplayInfo_Click(object sender, EventArgs e)
+        {
+            int indexPod = getSelectedIndexFromListView(lstPodcasts);
+
+            if (indexPod > -1)
+            {
+                MessageBox.Show(podcastController.Podcasts[indexPod].DisplayInfo());
+            }
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Models
 
         public override string DisplayInfo()
         {
-            return base.DisplayInfo() + " Nyhetsnamn: " + Name + "Kategori: " + Category;
+            return base.DisplayInfo() + "\nNyhetsnamn: " + Name + "\nKategori: " + Category;
         }
     }
 }

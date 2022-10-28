@@ -54,6 +54,7 @@
             this.lblEpisode = new System.Windows.Forms.Label();
             this.txtChange = new System.Windows.Forms.TextBox();
             this.lblEnterCategory = new System.Windows.Forms.Label();
+            this.btnDisplayInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCategories
@@ -62,7 +63,7 @@
             this.lblCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCategories.Location = new System.Drawing.Point(1116, 27);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(143, 29);
+            this.lblCategories.Size = new System.Drawing.Size(78, 15);
             this.lblCategories.TabIndex = 0;
             this.lblCategories.Text = "Kategorier:";
             // 
@@ -72,7 +73,7 @@
             this.lblUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUrl.Location = new System.Drawing.Point(28, 308);
             this.lblUrl.Name = "lblUrl";
-            this.lblUrl.Size = new System.Drawing.Size(70, 29);
+            this.lblUrl.Size = new System.Drawing.Size(39, 15);
             this.lblUrl.TabIndex = 1;
             this.lblUrl.Text = "URL:";
             // 
@@ -82,7 +83,7 @@
             this.lblUpdateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpdateName.Location = new System.Drawing.Point(472, 308);
             this.lblUpdateName.Name = "lblUpdateName";
-            this.lblUpdateName.Size = new System.Drawing.Size(158, 29);
+            this.lblUpdateName.Size = new System.Drawing.Size(88, 15);
             this.lblUpdateName.TabIndex = 2;
             this.lblUpdateName.Text = "Ändra namn:";
             // 
@@ -92,7 +93,7 @@
             this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCategory.Location = new System.Drawing.Point(801, 308);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(119, 29);
+            this.lblCategory.Size = new System.Drawing.Size(65, 15);
             this.lblCategory.TabIndex = 3;
             this.lblCategory.Text = "Kategori:";
             // 
@@ -103,7 +104,7 @@
             this.cbxCategory.FormattingEnabled = true;
             this.cbxCategory.Location = new System.Drawing.Point(801, 351);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(252, 45);
+            this.cbxCategory.Size = new System.Drawing.Size(252, 28);
             this.cbxCategory.TabIndex = 5;
             this.cbxCategory.Text = "Välj kategori:";
             // 
@@ -113,7 +114,7 @@
             this.txtUrl.ForeColor = System.Drawing.Color.Black;
             this.txtUrl.Location = new System.Drawing.Point(28, 352);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(437, 44);
+            this.txtUrl.Size = new System.Drawing.Size(437, 26);
             this.txtUrl.TabIndex = 6;
             this.txtUrl.Text = "http://";
             this.txtUrl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUrl_MouseClick);
@@ -238,7 +239,7 @@
             // 
             this.txtCategory.Location = new System.Drawing.Point(1118, 327);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(503, 56);
+            this.txtCategory.Size = new System.Drawing.Size(503, 32);
             this.txtCategory.TabIndex = 15;
             // 
             // lblDescription
@@ -247,7 +248,7 @@
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDescription.Location = new System.Drawing.Point(1106, 535);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(145, 29);
+            this.lblDescription.Size = new System.Drawing.Size(77, 16);
             this.lblDescription.TabIndex = 16;
             this.lblDescription.Text = "Beskrivning";
             // 
@@ -256,7 +257,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Location = new System.Drawing.Point(1106, 484);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(160, 51);
+            this.lblTitle.Size = new System.Drawing.Size(85, 26);
             this.lblTitle.TabIndex = 17;
             this.lblTitle.Text = "Avsnitt";
             // 
@@ -284,7 +285,7 @@
             this.lblEpisode.AutoSize = true;
             this.lblEpisode.Location = new System.Drawing.Point(28, 484);
             this.lblEpisode.Name = "lblEpisode";
-            this.lblEpisode.Size = new System.Drawing.Size(160, 51);
+            this.lblEpisode.Size = new System.Drawing.Size(85, 26);
             this.lblEpisode.TabIndex = 19;
             this.lblEpisode.Text = "Avsnitt";
             // 
@@ -294,7 +295,7 @@
             this.txtChange.ForeColor = System.Drawing.Color.Black;
             this.txtChange.Location = new System.Drawing.Point(471, 352);
             this.txtChange.Name = "txtChange";
-            this.txtChange.Size = new System.Drawing.Size(322, 44);
+            this.txtChange.Size = new System.Drawing.Size(322, 26);
             this.txtChange.TabIndex = 20;
             // 
             // lblEnterCategory
@@ -303,15 +304,27 @@
             this.lblEnterCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEnterCategory.Location = new System.Drawing.Point(1116, 286);
             this.lblEnterCategory.Name = "lblEnterCategory";
-            this.lblEnterCategory.Size = new System.Drawing.Size(301, 29);
+            this.lblEnterCategory.Size = new System.Drawing.Size(172, 16);
             this.lblEnterCategory.TabIndex = 21;
             this.lblEnterCategory.Text = "Lägg till/ändra kategori:";
             // 
+            // btnDisplayInfo
+            // 
+            this.btnDisplayInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDisplayInfo.Location = new System.Drawing.Point(28, 431);
+            this.btnDisplayInfo.Name = "btnDisplayInfo";
+            this.btnDisplayInfo.Size = new System.Drawing.Size(165, 50);
+            this.btnDisplayInfo.TabIndex = 22;
+            this.btnDisplayInfo.Text = "Visa information om feed";
+            this.btnDisplayInfo.UseVisualStyleBackColor = true;
+            this.btnDisplayInfo.Click += new System.EventHandler(this.btnDisplayInfo_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(26F, 51F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1633, 870);
+            this.Controls.Add(this.btnDisplayInfo);
             this.Controls.Add(this.lblEnterCategory);
             this.Controls.Add(this.txtChange);
             this.Controls.Add(this.lblEpisode);
@@ -370,5 +383,6 @@
         private TextBox txtChange;
         private Label lblEnterCategory;
         private ColumnHeader KategoriHeader;
+        private Button btnDisplayInfo;
     }
 }
