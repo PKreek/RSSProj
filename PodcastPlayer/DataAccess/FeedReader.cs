@@ -28,38 +28,5 @@ namespace DataAccess
             return podcast;
         }
 
-        public async Task ReadAsync(Feed feed)
-        {
-            XmlReader reader = XmlReader.Create(feed.Url);
-            SyndicationFeed syndicationFeed = await Task.Run(()=>SyndicationFeed.Load(reader));
-
-            feed.Name = syndicationFeed.Title.Text;
-
-            foreach (SyndicationItem item in syndicationFeed.Items)
-            {
-                string description = item.Summary.Text;
-                description = Regex.Replace(description, @"<.+?>", String.Empty);
-                Episode episode = new Episode(item.Title.Text, description);
-                feed.Episodes.Add(episode);
-            }
-        }
-
-        //public List<Episode> GetEpisodesList(string url)
-        //{
-        //    XmlReader reader = XmlReader.Create(url);
-        //    SyndicationFeed feed = SyndicationFeed.Load(reader);
-
-        //    List<Episode> episodes = new List<Episode>();
-
-
-        //    foreach (SyndicationItem item in feed.Items)
-        //    {
-        //        Episode episode = new Episode(item.Title.Text);
-        //        episodes.Add(episode);
-        //    }
-
-        //    return episodes;
-        //}
-
     }
 }
