@@ -83,26 +83,22 @@ namespace PodcastPlayer
         }
 
         private void btnNewCategory_Click(object sender, EventArgs e)
-        {
-            
+        { 
             try
             { 
-                    string ruta = txtCategory.Text;
-
-                    validering.isEmpty(ruta);
-                    validering.toLong(ruta);
-                    Category category = categoryController.AddCategory(txtCategory.Text);
-                    lstCategory.Items.Add(category.CatName);
-                    categoryController.SaveCategory();
-                    cbxCategory.Items.Clear();
-                    fillCategoryCbx();
-                    txtCategory.Clear();           
+                string ruta = txtCategory.Text;
+                validering.isEmpty(ruta);
+                validering.toLong(ruta);
+                Category category = categoryController.AddCategory(txtCategory.Text);
+                lstCategory.Items.Add(category.CatName);
+                categoryController.SaveCategory();
+                cbxCategory.Items.Clear();
+                fillCategoryCbx();
+                txtCategory.Clear();           
             }
             catch(EmptyException ex)
             {
                 MessageBox.Show(ex.Message);
-
-
             }
             catch(ToLongException ex)
             {
