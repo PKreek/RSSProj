@@ -10,16 +10,10 @@ namespace DataAccessLayer
     internal class Serializer<T>
     {
         private string fileName;
-        public string FileName
-        {
-            set
-            {
-                fileName = value;
-            }
-        }
+
         public Serializer(string fName)
         {
-            FileName = fName+".xml";
+            fileName = fName+".xml";
         }
         public void Serialize(List<T> list)
         {
