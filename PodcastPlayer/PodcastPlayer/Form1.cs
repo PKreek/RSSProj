@@ -182,10 +182,7 @@ namespace PodcastPlayer
                 {
                     podcastController.DeletePodcast(category);
                     categoryController.DeleteCategory(indexCat);
-                    readCategory();
-                    
-                    fillCategoryCbx();
-                    readPodcast();
+                    updateLists();
                     lstEpisode.Items.Clear();
                 }
             }
