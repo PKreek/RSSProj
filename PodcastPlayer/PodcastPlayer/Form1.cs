@@ -22,9 +22,7 @@ namespace PodcastPlayer
             InitializeComponent();
             podcastController = new PodcastController();
             categoryController = new CategoryController();
-            readCategory();
-            fillCategoryCbx();
-            readPodcast();
+            updateLists();
             lblDescription.AutoSize = true;
             lblDescription.MaximumSize = new Size(400, 0);
         }
@@ -159,13 +157,10 @@ namespace PodcastPlayer
                     }
                     category.CatName = txtCategory.Text;
                 }
-                readCategory();
-                cbxCategory.Items.Clear();
-                fillCategoryCbx();
                 podcastController.SavePodcast();
                 categoryController.SaveCategory();
                 txtCategory.Clear();
-                readPodcast();
+                updateLists();
             }
         }
 
@@ -224,7 +219,9 @@ namespace PodcastPlayer
             {
                 Category category =  categoryController.categories[indexCat];
                 var list = podcastController.FilterList(category);
-                lstPodcasts.Items.Clear();  
+                lstPodcasts.Items.Clear();
+                lstEpisode.Items.Clear();
+                lblDescription.Text = "Beskrivning";
                 foreach (var podcast in list)
                 {
                     ListViewItem item = new ListViewItem(podcast.Episodes.Count.ToString());
@@ -259,6 +256,8 @@ namespace PodcastPlayer
         {
             podcastController.FilteredPodcasts = podcastController.Podcasts;
             lstPodcasts.Items.Clear();
+            lstEpisode.Items.Clear();
+            lblDescription.Text = "Beskrivning";
 
             if (podcastController.FilteredPodcasts.Count > 0)
             {
@@ -272,7 +271,7 @@ namespace PodcastPlayer
             }
         }
 
-        public void readCategory()
+        private void readCategory()
         {
             List<Category> list = categoryController.categories;
             lstCategory.Items.Clear();
@@ -283,6 +282,13 @@ namespace PodcastPlayer
                     lstCategory.Items.Add(item.CatName);
                 }
             }
+        }
+
+        private void updateLists()
+        {
+            readCategory();
+            readPodcast();
+            fillCategoryCbx();
         }
     }
 }
