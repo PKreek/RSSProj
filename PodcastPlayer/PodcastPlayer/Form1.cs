@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Reflection;
 using BusinessLayer;
 using System.Reflection.Metadata;
+using System.Xml;
 
 namespace PodcastPlayer
 {
@@ -47,9 +48,17 @@ namespace PodcastPlayer
                 {
                     MessageBox.Show("Felaktigt format för URL");
                 }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("Felaktigt format för URL");
+                }
                 catch (HttpRequestException)
                 {
-                    MessageBox.Show("Podcasten hittades inte. Kontrollera din URL");
+                    MessageBox.Show("Podcasten hittades inte. Kontrollera din URL och internetuppkoppling");
+                }
+                catch (XmlException)
+                {
+                    MessageBox.Show("Det där är ingen podcast!");
                 }
             }
             else
