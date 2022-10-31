@@ -27,31 +27,6 @@ namespace BusinessLayer.Controllers
 
         }
 
-        //public Podcast AddPodcast(string url, string catName)
-        //{
-        //    Podcast podcast = feedReader.ReadFeed(url);
-        //    Podcasts.Add(podcast);
-        //    podcast.Category = catName;
-        //    //RetrieveEpisodes();
-        //    return podcast;
-        //}
-
-        //public async void addAsync() 
-        //{
-
-        //}
-
-
-        //public async Task<Podcast> AddPodcast(string url, string catName)
-        //{
-        //    Podcast podcast = new Podcast(url);
-        //    Podcasts.Add(podcast);
-        //    podcast.Category = catName;
-        //    await Task.Run(()=>feedReader.ReadAsync(podcast));
-
-        //    return podcast;
-        //}
-
         public async Task<Podcast> AddPodcast(string url, string catName)
         {
             Podcast podcast = await Task.Run(() => feedReader.ReadFeed(url));
