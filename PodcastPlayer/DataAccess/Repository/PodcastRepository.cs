@@ -46,7 +46,14 @@ namespace DataAccessLayer.Repository
         }
         public void SaveChanges()
         {
-            PodcastSerializer.Serialize(ListOfPodcasts);
+            try
+            {
+                PodcastSerializer.Serialize(ListOfPodcasts);
+            }
+            catch(Exception)
+            {
+
+            }
         }
     }
 }
