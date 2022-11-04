@@ -34,6 +34,7 @@ namespace PodcastPlayer
             {
                 try
                 {
+                    validering.isEmpty(txtUrl.Text);
                     string catName = cbxCategory.SelectedItem.ToString();
                     Podcast podcast = await Task.Run(()=>podcastController.AddPodcast(txtUrl.Text, catName));
                     if (!txtChange.Text.Equals(""))
@@ -41,6 +42,10 @@ namespace PodcastPlayer
                         podcast.Name = txtChange.Text;
                     }
                     podcastController.SavePodcast();
+                }
+                catch(EmptyException)
+                {
+                    MessageBox.Show("Du måste fylla i en URL");
                 }
                 catch (UriFormatException)
                 {

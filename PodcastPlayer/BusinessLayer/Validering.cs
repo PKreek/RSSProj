@@ -18,13 +18,10 @@ namespace BusinessLayer
 
         public void isEmpty(string field)
         {
-
             if (field.Equals("")) 
             {
                 throw new EmptyException();
             }
-
-            
         }
 
         public void toLong(string field)
